@@ -1,0 +1,4 @@
+﻿  ncs_test.cpp
+c:\users\kamilla\desktop\project\project\ncs_test.cpp(6): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+c:\users\kamilla\desktop\project\project\ncs_test.cpp(53): warning C4018: <: несоответствие типов со знаком и без знака
+  Project.vcxproj -> C:\Users\Kamilla\Desktop\Project\Debug\Project.exe
