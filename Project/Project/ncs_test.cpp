@@ -1,7 +1,8 @@
+#include"ncs.h"
 #include<string>
 #include<vector>
 #include<map>
-#include"ncs.h"
+
 #include<iomanip>
 #include<iostream>>
 //
@@ -22,8 +23,8 @@ int main(int argc, char **argv)
 
 	NCS test_nc2(nc2_name, nc2_spectra, nc2_labeltype);
 	NCS newtest = test_nc2;
-	cout << " Size of label_types: " << test_nc2.label_types.size() << endl;
-	cout << " Size of spec_list: " << test_nc2.spec_list.size() << endl;
+	cout << " Size of label_types: " << newtest.label_types.size() << endl;
+	cout << " Size of spec_list: " << newtest.spec_list.size() << endl;
 	cout << " codes_dict: " << endl;
 	cout << "  ";
 	//cout << " see " << endl; 

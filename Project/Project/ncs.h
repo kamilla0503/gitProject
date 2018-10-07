@@ -53,12 +53,14 @@ public:
 	map<labeltype, int> label_power;
 	map <labeltype, map <labeltype, string>> codes_dict;
 	vector <vector <int>> vectors;
-	map <labeltype, string> subdict;
+	//map <labeltype, string> subdict;
 	
 	//name, spectra_list, label_types, deuterated = False)
 	//NCS(string name_ncs, vector<spectrum>spectra_list_ncs, vector<labeltype> label_types_ncs, bool deuterated_ncs = false);
 	NCS(string name_ncs = "", vector<spectrum>spectra_list_ncs = {}, vector<labeltype> label_types_ncs = {}, bool deuterated_ncs = 0);
 	void make_coding_table(void); 
+	NCS& operator=(NCS& other);
+	
 };
 
 

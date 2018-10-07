@@ -237,16 +237,37 @@ class constants {
 
 	}
 
+
+NCS& NCS::operator=(NCS& other){
+
+	if (this != &other) {  //?
+
+		name = other.name;
+
+		spec_list = other.spec_list;
+		label_types = other.label_types;
+		deuterated = other.deuterated;
+		label_dict = other.label_dict;
+		letters = other.letters;
+		//vector <> spectra_numbers; 
+		label_power =other.label_power;
+		 codes_dict=other.codes_dict;
+		 vectors = other.vectors;
+			}
+	return *this;
+}
+
+
 Scheme::Scheme(string sname, NCS sncs, int  bsamples, vector <string>  bpatterns) {
 	name = sname;
 	patterns = bpatterns;
 	samples = bsamples;
-	//ncs = NCS(sncs.name, sncs.label_types, ); 
-	//ncs = sncs; 
+	//ncs = NCS(sncs.name, sncs.spec_list, sncs.label_types, sncs.deuterated);
+	ncs = sncs; 
 
 }
 
-
+/**
 bool pattern_bigger( string pattern1, string  pattern2) {
 	char type1, type2;
 	const vector  <string> TYPES = { "X", "N", "C", "D", "A", "T", "S", "F" };
@@ -257,12 +278,13 @@ bool pattern_bigger( string pattern1, string  pattern2) {
 		if (distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), type1)) > distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), type2))) {
 			return true; 
 		}
-		if (distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), type1)) < distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), type2))) {
+		else if (distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), type1)) < distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), type2))) {
 			return false; 
 		}
+		else continue;
 	}
 	return true;
-}
+}**/
 
 
 /**
