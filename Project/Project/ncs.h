@@ -1,16 +1,11 @@
 #pragma once
 #ifndef NCS_H_INCLUDED
 #define NCS_H_INCLUDED
-
-
-
 #include<string>
 #include<vector>
 #include<map>
 #include<set>
-
 using namespace std;
-
 
 class labeltype {
 public:

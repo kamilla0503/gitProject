@@ -1,10 +1,13 @@
 ﻿  ncs.cpp
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(165): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(167): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(179): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(182): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(208): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(224): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(227): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(159): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(161): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(173): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(176): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(202): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(218): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(221): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(253): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(288): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(292): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(93): warning C4715: spectrum::has_signal: значение возвращается не при всех путях выполнения
   Project.vcxproj -> C:\Users\Kamilla\Desktop\gitProject\Project\Debug\Project.exe

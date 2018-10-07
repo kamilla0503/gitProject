@@ -314,7 +314,8 @@ void Scheme::simplify() {
 	string simple_pattern;
 	for (string pattern : patterns) {
 		simple_pattern = simplify_pattern(pattern);
-		if (simplified.empty != true && simplified.count(simple_pattern) > 0) {
+		//if (( simplified.empty != true ) && (simplified.count(simple_pattern) > 0)) {
+		if ((simplified.size()==0) && (simplified.find(simple_pattern) != simplified.end())) {
 			simplified[simple_pattern] = simplified[simple_pattern] + 1;
 
 
