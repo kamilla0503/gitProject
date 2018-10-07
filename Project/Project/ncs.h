@@ -75,7 +75,7 @@ public:
 
 
 //for scheme (patterns) 
-bool pattern_bigger(vector <string> pattern1, vector <string>  pattern2);
+bool pattern_bigger(string pattern1, string  pattern2);
 
 
 #endif  // NCS_H_INCLUDED

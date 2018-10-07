@@ -126,6 +126,9 @@ class constants {
 		labeltype typeF("F", 11);
 
 		const vector <labeltype> BASIC_TYPES = { typeX, typeN, typeC, typeD, typeA, typeT, typeS, typeF };
+		//const vector  <string> TYPES = {"X", "N", "C", "D", "A", "T", "S", "F"};
+
+
 	}
 };
 
@@ -244,11 +247,21 @@ Scheme::Scheme(string sname, NCS sncs, int  bsamples, vector <string>  bpatterns
 }
 
 
-bool pattern_bigger(vector <string> pattern1, vector <string>  pattern2) {
-
-
-
-
+bool pattern_bigger( string pattern1, string  pattern2) {
+	char type1, type2;
+	const vector  <string> TYPES = { "X", "N", "C", "D", "A", "T", "S", "F" };
+	//constants consts(); 
+	for (int i = 0; i < pattern1.size(); i++) {
+		type1 = pattern1[i];
+		type2 = pattern2[i];
+		if (distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), type1)) > distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), type2))) {
+			return true; 
+		}
+		if (distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), type1)) < distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), type2))) {
+			return false; 
+		}
+	}
+	return true;
 }
 
 
