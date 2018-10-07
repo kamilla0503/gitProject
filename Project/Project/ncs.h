@@ -61,4 +61,21 @@ public:
 	void make_coding_table(void); 
 };
 
+
+
+class Scheme {
+public:
+	string name;
+	NCS ncs;
+	int samples;
+	vector <string> patterns;
+	Scheme(string sname, NCS sncs, int  bsamples, vector <string>  bpatterns); //patterns 
+	//bool check_patterns(vector <string> patterns)
+};
+
+
+//for scheme (patterns) 
+bool pattern_bigger(vector <string> pattern1, vector <string>  pattern2);
+
+
 #endif  // NCS_H_INCLUDED

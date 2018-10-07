@@ -234,28 +234,37 @@ class constants {
 
 	}
 
+Scheme::Scheme(string sname, NCS sncs, int  bsamples, vector <string>  bpatterns) {
+	name = sname;
+	patterns = bpatterns;
+	samples = bsamples;
+	//ncs = NCS(sncs.name, sncs.label_types, ); 
+	//ncs = sncs; 
+
+}
 
 
-class Scheme {
-public: 
-	string name;
-	NCS ncs;
-	int samples; 
-	vector <string> patterns; 
-	Scheme(string sname, NCS sncs,int  bsamples, vector <string>  bpatterns) {
-		name = sname; 
-		patterns = bpatterns; 
-		samples = bsamples;
-		//ncs = NCS(sncs.name, sncs.label_types, ); 
-		//ncs = sncs; 
-
-	}
+bool pattern_bigger(vector <string> pattern1, vector <string>  pattern2) {
 
 
 
 
+}
 
-};
+
+/**
+bool Scheme::check_patterns(vector <string> patterns) {
+	if (patterns.size() == 0) //work or not?  // now patterns is list of string, but it can be changed 
+		return false;
+
+
+
+
+}
+
+
+**/
+
 
  //
 /**
