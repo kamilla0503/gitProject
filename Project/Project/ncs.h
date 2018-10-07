@@ -7,6 +7,7 @@
 #include<string>
 #include<vector>
 #include<map>
+#include<set>
 
 using namespace std;
 
@@ -60,7 +61,8 @@ public:
 	NCS(string name_ncs = "", vector<spectrum>spectra_list_ncs = {}, vector<labeltype> label_types_ncs = {}, bool deuterated_ncs = 0);
 	void make_coding_table(void); 
 	NCS& operator=(NCS& other);
-	
+	string calc_code(string pattern_1, string pattern_2);
+
 };
 
 
@@ -71,13 +73,20 @@ public:
 	NCS ncs;
 	int samples;
 	vector <string> patterns;
+	set <string> codes; 
+	set <string> new_codes;
+	map <string, int> simplified;
+	bool good;
 	Scheme(string sname, NCS sncs, int  bsamples, vector <string>  bpatterns); //patterns 
 	//bool check_patterns(vector <string> patterns)
+	bool check_codes();
+	void simplify();
+
 };
 
 
 //for scheme (patterns) 
 bool pattern_bigger(string pattern1, string  pattern2);
-
+string simplify_pattern(string pattern);
 
 #endif  // NCS_H_INCLUDED

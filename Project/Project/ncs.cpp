@@ -113,9 +113,6 @@ class constants {
 		labeltype typeS("S", 101);
 		labeltype typeF("F", 011);
 		**/
-
-
-
 		labeltype typeX("X", 0);
 		labeltype typeN("N", 100);
 		labeltype typeC("C", 1);
@@ -131,9 +128,6 @@ class constants {
 
 	}
 };
-
-
-
 
 	//void make_coding_table(void); 
 	//name, spectra_list, label_types, deuterated = False)
@@ -236,25 +230,103 @@ class constants {
 		}
 
 	}
-
-
+	//????
 NCS& NCS::operator=(NCS& other){
-
 	if (this != &other) {  //?
-
 		name = other.name;
-
 		spec_list = other.spec_list;
 		label_types = other.label_types;
 		deuterated = other.deuterated;
 		label_dict = other.label_dict;
-		letters = other.letters;
-		//vector <> spectra_numbers; 
+		letters = other.letters; 
 		label_power =other.label_power;
 		 codes_dict=other.codes_dict;
 		 vectors = other.vectors;
-			}
+	}
 	return *this;
+}
+
+
+string NCS::calc_code(string pattern_1, string pattern_2) {
+	string value = "";
+	string s1, s2; 
+	for (int i = 0; i < pattern_1.size(); i++) {
+		s1 = pattern_1[i]; // change? 
+		s2 = pattern_2[i];
+		value.push_back(codes_dict[label_dict[s1]][label_dict[s2]][0]); //
+	}
+	return value; 
+} //needs tests 
+
+bool Scheme::check_codes() {
+	set <string> codes; 
+	string code; // n or not n 
+	bool first = true; 
+	for (string pattern_1 : patterns) {
+		for (string pattern_2 : patterns) {
+			code = ncs.calc_code(pattern_1, pattern_2);
+			if (first) {
+				first = false; 
+				continue;
+			}
+			else if (find(codes.begin(), codes.end(), code) != codes.end()) {
+				return false;
+			}
+			else {
+				codes.insert(code);
+			}
+		}
+	}
+	return true;
+}
+
+
+string simplify_pattern(string pattern) {
+	string result = "";
+	const vector  <string> TYPES = { "X", "N", "C", "D", "A", "T", "S", "F" };
+	vector <int> simple_form; 
+	for (int i = 0; i < TYPES.size(); i++) {
+		simple_form.push_back(0);
+	}
+	for (char label: pattern) {
+		for (int i = 0; i < TYPES.size(); i++) {
+			if (TYPES[i] == to_string(label)) {
+				simple_form[i] = simple_form[i] + 1;
+				continue;
+			}
+
+		}
+	}
+
+	char b;
+	for ( int a : simple_form) {
+		b = static_cast<char>(a);
+		//result.push_back(char(a));
+		result.push_back(b);
+	}
+
+
+	return result;
+}
+
+void Scheme::simplify() {
+	map <string, int> simplified;
+	string simple_pattern;
+	for (string pattern : patterns) {
+		simple_pattern = simplify_pattern(pattern);
+		if (simplified.empty != true && simplified.count(simple_pattern) > 0) {
+			simplified[simple_pattern] = simplified[simple_pattern] + 1;
+
+
+		}
+		else {
+			simplified[simple_pattern] = 1;
+		}
+
+
+
+	}
+
 }
 
 
@@ -264,8 +336,21 @@ Scheme::Scheme(string sname, NCS sncs, int  bsamples, vector <string>  bpatterns
 	samples = bsamples;
 	//ncs = NCS(sncs.name, sncs.spec_list, sncs.label_types, sncs.deuterated);
 	ncs = sncs; 
+	set <string> codes; //
+	good = check_codes();
+	map <string, int> simplified;//
+	simplify();
+	set <string> new_codes;
+	//+?
+
+
 
 }
+
+
+
+
+
 
 /**
 bool pattern_bigger( string pattern1, string  pattern2) {
@@ -301,21 +386,6 @@ bool Scheme::check_patterns(vector <string> patterns) {
 **/
 
 
- //
-/**
-class BlockFinder {
-public:
-	int samples;
-	bool block_finder_mode;
-	NCS ncs;
-	int min_depth;
-	BlockFinder(int bsamples, NCS bncs, int bmin_depth, logger, elb_logger, bool bblock_finder_mode = 0) {
-		samples = bsamples;
-		block_finder_mode = bblock_finder_mode;
-		min_depth = bmin_depth;
-		ncs = bncs; //определить присваивание? 
-	}
-};**/
 
 
 
