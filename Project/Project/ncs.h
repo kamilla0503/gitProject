@@ -80,8 +80,18 @@ public:
 	void add_new_codes(string new_pattern);
 	void add_pattern(string new_pattern); 
 	bool try_pattern(string  new_pattern);
+	Scheme direct_product(Scheme scheme);
 
+};
 
+class ELB {
+public: 
+	vector <string> patterns;
+	string ncs_name; 
+	bool deuterated;
+	map <string, int> simplified;
+	void simplify();
+	ELB(vector <string> bpatterns, string bncs_name, bool bdeuterated = false);
 };
 
 

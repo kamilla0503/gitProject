@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ELBcpp.cpp" />
     <ClCompile Include="ncs.cpp" />
     <ClCompile Include="ncs_test.cpp" />
   </ItemGroup>

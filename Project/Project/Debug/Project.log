@@ -1,4 +1,5 @@
-﻿  ncs.cpp
+﻿  ELBcpp.cpp
+  ncs.cpp
 c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(128): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(130): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(142): warning C4018: <: несоответствие типов со знаком и без знака

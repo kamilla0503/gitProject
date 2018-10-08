@@ -404,7 +404,19 @@ bool Scheme::try_pattern(string  new_pattern) {
 	return true;
 }
 
+Scheme Scheme::direct_product(Scheme scheme) {
+	vector <string>  new_patterns;
 
+	for ( string pattern_1 : patterns){
+		for (string  pattern_2 : scheme.patterns){
+			new_patterns.push_back(pattern_1 + pattern_2);
+		}
+	}
+	string new_name = name + "_X_" + scheme.name;
+	samples = new_patterns[0].size(); // n or o 
+	Scheme new_scheme = Scheme(new_name, ncs, samples, new_patterns);
+		return new_scheme;
+}
 
 
 
