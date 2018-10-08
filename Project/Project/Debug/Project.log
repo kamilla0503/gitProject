@@ -1,13 +1,20 @@
 ﻿  ncs.cpp
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(159): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(161): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(173): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(176): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(202): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(218): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(221): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(253): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(288): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(292): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(93): warning C4715: spectrum::has_signal: значение возвращается не при всех путях выполнения
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(128): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(130): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(142): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(145): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(168): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(184): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(187): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(219): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(254): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(258): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(326): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(327): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(358): warning C4018: <: несоответствие типов со знаком и без знака
+  ncs_test.cpp
+c:\users\kamilla\desktop\gitproject\project\project\ncs_test.cpp(7): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+c:\users\kamilla\desktop\gitproject\project\project\ncs_test.cpp(54): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(76): warning C4715: spectrum::has_signal: значение возвращается не при всех путях выполнения
   Project.vcxproj -> C:\Users\Kamilla\Desktop\gitProject\Project\Debug\Project.exe

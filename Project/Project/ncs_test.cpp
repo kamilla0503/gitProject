@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 	for (int code = 0; code < test_nc2.vectors.size(); code++) {
 		//cout << setw(7) << code << " ";
 		cout << code << " ";
-		vector <int> v = test_nc2.vectors[code];
+		vector <int> v = newtest.vectors[code];
 		for (int peak : v) {
 			cout << setw(10) << peak << " ";
 		}

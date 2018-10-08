@@ -5,31 +5,11 @@
 #include<map>
 #include<set>
 #include "ncs.h"
-
-// BlockFinder project
-
 using namespace std; 
  
 spectrum::spectrum(string sname) { 
 	name = sname; 
 }
-/**
-
-class labeltype {
-public:
-	string name;
-	int  isotopes;
-	//bool HN, CA, CO;
-	//
-	labeltype(string lname = "X", int  lisotopes =0) {
-		name = lname;
-		isotopes = lisotopes;
-	}
-
-	bool operator<(const labeltype & t2);
-
-};**/
-
 
 bool labeltype::operator<(const labeltype& t2) {
 	return (this->name < t2.name);
@@ -46,6 +26,11 @@ bool operator==(const labeltype& t1, const string& s2) {
 bool operator==(const string& s1, const labeltype& t2) {
 	return (s1 == t2.name);
 }
+
+bool operator==(const labeltype& t1, const labeltype& t2) { //*
+	return (t1.name == t2.name);
+}
+
 
 int spectrum::has_signal(labeltype label_type_1, labeltype label_type_2) {
 		vector <bool> vec1, vec2;
@@ -87,8 +72,6 @@ int spectrum::has_signal(labeltype label_type_1, labeltype label_type_2) {
 		}
 
 		else if (name == "HNCAfCO") 
-			//# Hypothetic spectrum, to be devepoled
-			//# HN(CA - filtered)CO
 			return int(atom_list[3] && !(atom_list[4]) && atom_list[5]);
 	}
 
@@ -128,10 +111,6 @@ class constants {
 
 	}
 };
-
-	//void make_coding_table(void); 
-	//name, spectra_list, label_types, deuterated = False)
-
 	NCS::NCS(string name_ncs , vector<spectrum>spectra_list_ncs , vector<labeltype> label_types_ncs , bool deuterated_ncs ) {
 		name = name_ncs;
 		spec_list = spectra_list_ncs;
@@ -141,16 +120,6 @@ class constants {
 			label_dict[l.name] = l;
 		}
 		letters = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
-		/**for (spectrum s : spec_list) {
-			//vectors.push_back([0]);
-			vectors.push_back({ 0 });
-		}**/
-		/**for (int j = 0; j < spec_list.size(); j++) {
-			vectors.push_back({});
-			vectors[j].push_back(0); 
-		}**/
-
-		
 		make_coding_table(); 
 	}
 
@@ -180,10 +149,7 @@ class constants {
 					vec.push_back(spect.has_signal(label_1, label_2));
 					
 				}
-				/**cout << " vec" << endl; 
-				for (int m = 0; m < vec.size(); m++) {
-					cout << vec[m] << "  " << endl;
-				}**/
+				
 				if (find(vectors.begin(), vectors.end(), vec) != vectors.end()) {
 					code = distance(vectors.begin(), find(vectors.begin(), vectors.end(), vec));
 				}
@@ -304,8 +270,6 @@ string simplify_pattern(string pattern) {
 		//result.push_back(char(a));
 		result.push_back(b);
 	}
-
-
 	return result;
 }
 
@@ -317,19 +281,13 @@ void Scheme::simplify() {
 		//if (( simplified.empty != true ) && (simplified.count(simple_pattern) > 0)) {
 		if ((simplified.size()==0) && (simplified.find(simple_pattern) != simplified.end())) {
 			simplified[simple_pattern] = simplified[simple_pattern] + 1;
-
-
 		}
 		else {
 			simplified[simple_pattern] = 1;
 		}
-
-
-
 	}
 
 }
-
 
 Scheme::Scheme(string sname, NCS sncs, int  bsamples, vector <string>  bpatterns) {
 	name = sname;
@@ -343,50 +301,108 @@ Scheme::Scheme(string sname, NCS sncs, int  bsamples, vector <string>  bpatterns
 	simplify();
 	set <string> new_codes;
 	//+?
+}
+bool Scheme::check_patterns(vector <string> patterns) {
+	if (patterns.size()==0) {
+		return false; 
+	}
+	int sizep; 
+	sizep = patterns[0].size();
+	for (string pattern : patterns) {
+		for (char label_type : pattern) {
+			if (find(ncs.label_types.begin(), ncs.label_types.end(), to_string(label_type)) == ncs.label_types.end()) { //-/ 
+				return false;
+			}
+		}
+		if (pattern.size() != sizep) {
+			return false;
+		}
+	}
+	return true; 
+}
 
+void Scheme::sort() { //* 
+	string temp_pattern;
+	for (int i = 0; i < (patterns.size() - 1); i++) {
+		for (int j = 0; i < (patterns.size() -i-1); j++) {
+			if (pattern_bigger(patterns[i], patterns[i + j + 1])) {
+				temp_pattern = patterns[i];
+				patterns[i] = patterns[i + j + 1];
+				patterns[i + j + 1] = temp_pattern;
+			}
+		}
+	}
+}
 
+void Scheme::add_new_codes(string new_pattern) {
+	for (string pattern : patterns) {
+		codes.insert(ncs.calc_code(pattern, new_pattern));
+		codes.insert(ncs.calc_code(new_pattern, pattern));
+	}
+
+	codes.insert(ncs.calc_code(new_pattern, new_pattern));
 
 }
 
+void Scheme::add_pattern(string new_pattern) {
+	patterns.push_back(new_pattern);
+	add_new_codes(new_pattern);
+	simplify();
+}
 
-
-
-
-
-/**
 bool pattern_bigger( string pattern1, string  pattern2) {
 	char type1, type2;
-	const vector  <string> TYPES = { "X", "N", "C", "D", "A", "T", "S", "F" };
+	//const vector  <char> TYPES = { char("X"), char("N"), char("C", "D", "A", "T", "S", "F" };
 	//constants consts(); 
+	const vector  <string> TYPES = { "X", "N", "C", "D", "A", "T", "S", "F" };
 	for (int i = 0; i < pattern1.size(); i++) {
 		type1 = pattern1[i];
 		type2 = pattern2[i];
-		if (distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), type1)) > distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), type2))) {
+		//!
+		if (distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), to_string(type1))) > distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), to_string(type2)))) {
 			return true; 
 		}
-		else if (distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), type1)) < distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), type2))) {
+		else if (distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), to_string(type1))) < distance(TYPES.begin(), find(TYPES.begin(), TYPES.end(), to_string(type2)))) {
 			return false; 
 		}
 		else continue;
 	}
 	return true;
-}**/
-
-
-/**
-bool Scheme::check_patterns(vector <string> patterns) {
-	if (patterns.size() == 0) //work or not?  // now patterns is list of string, but it can be changed 
-		return false;
-
-
-
-
 }
 
 
-**/
+bool Scheme::try_pattern(string  new_pattern) {
+	if (good == false) {
+		return false; 
+	}
+	set <string> new_codes;
+	string code_1, code_2;
+	if (find(patterns.begin(), patterns.end(), new_pattern) != patterns.end()) {
+		return false;
+	}
+	for (string pattern : patterns) {
 
+		code_1 = ncs.calc_code(pattern, new_pattern);
+		code_2 =ncs.calc_code(new_pattern, pattern);
+		if ( (find(codes.begin(), codes.end(), code_1) != codes.end() )|| (find(codes.begin(), codes.end(), code_2) != codes.end()) || code_1 == code_2 || (find(new_codes.begin(), new_codes.end(), code_2) != new_codes.end())|| (find(new_codes.begin(), new_codes.end(), code_1) != new_codes.end())) {
+			return false; 
+		}
+		else {
+				new_codes.insert(code_1);
+				new_codes.insert(code_2);
+		}
 
+	}
+	string self_code = ncs.calc_code(new_pattern, new_pattern);
+	if ((find(codes.begin(), codes.end(), self_code) != codes.end()) || (find(new_codes.begin(), new_codes.end(), self_code) != new_codes.end())) {
+		return false;
+
+	}
+	else {
+		new_codes.insert(self_code);
+	}
+	return true;
+}
 
 
 

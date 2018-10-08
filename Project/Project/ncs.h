@@ -73,9 +73,14 @@ public:
 	map <string, int> simplified;
 	bool good;
 	Scheme(string sname, NCS sncs, int  bsamples, vector <string>  bpatterns); //patterns 
-	//bool check_patterns(vector <string> patterns)
 	bool check_codes();
 	void simplify();
+	bool check_patterns(vector <string> patterns);
+	void sort();
+	void add_new_codes(string new_pattern);
+	void add_pattern(string new_pattern); 
+	bool try_pattern(string  new_pattern);
+
 
 };
 
