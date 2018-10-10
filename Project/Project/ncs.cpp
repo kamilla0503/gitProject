@@ -4,7 +4,10 @@
 #include<vector>
 #include<map>
 #include<set>
+#include <algorithm>
+
 #include "ncs.h"
+
 using namespace std; 
  
 spectrum::spectrum(string sname) { 
