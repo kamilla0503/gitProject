@@ -40,23 +40,32 @@ void ELB::sort() {
 }
 } 
 
-/**
 
-BlockFinder::BlockFinder(vector<labeltype> btypes, int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode)
+
+BlockFinder::BlockFinder( int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode, int bmin_t_free )
 {
 
-	types = btypes;
 	samples = bsamples;
 	ncs = bncs;
 	min_depth = bmin_depth;
+	check_t_free = false; 
+	block_finder_mode = bblock_finder_mode;
 	Scheme scheme("1", ncs, samples, {});
-	depth = 0; 
+	depth = 0;  
+	min_t_free = bmin_t_free;
+
+	if (min_t_free >= 0) {
+		check_t_free = true;
+	} 
+
+	if (min_depth <= 1) {
+		min_depth = 2;
+	} 
+
+
+
 	//counter.push_back(0); 
-	counter = { 0 };
-	max_depth = 0;
-	back_up_schemes = {};
-	result = {};
-	self.patterns = [self.generate_patterns(self.samples)]
+	
 //result = {};
 		//self.results_found = 0
 		//self.output = ''
@@ -68,7 +77,39 @@ BlockFinder::BlockFinder(vector<labeltype> btypes, int bsamples, NCS bncs, int b
 
 }
 
-**/
+
+
+vector <string> BlockFinder::generate_patterns(int  samples, bool top) {
+	if (samples == 0) {
+		vector <string> new_set = { "" };
+			
+		return new_set;
+	}
+	vector <string>  current_set = generate_patterns(samples - 1, top = false);
+	vector <string>new_set;
+	new_set = { };
+
+
+	string new_pattern;
+	for (string item : current_set) {
+		for (labeltype option : ncs.label_types) {
+			new_pattern = item + option.name;
+			if (top) {
+				if (ncs.check_power(new_pattern, min_depth) ){
+					new_set.push_back(new_pattern); 
+				}
+		}
+			else {
+				new_set.push_back(new_pattern);
+			} 
+	}
+	} 
+
+
+	return new_set;
+
+
+}
 
 /**
 bool ELB::is_subset_of(map <string, int> other_simple) {

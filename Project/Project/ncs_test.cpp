@@ -27,9 +27,9 @@ int main(int argc, char **argv)
 
 
 
-	nc2_labeltype.push_back(labeltype("X", 0));
-	nc2_labeltype.push_back(labeltype("N", 100));
-	nc2_labeltype.push_back(labeltype("C", 1));
+	nc2_labeltype.push_back(labeltype("X", 0, 0, 0));
+	nc2_labeltype.push_back(labeltype("N", 1,0,0));
+	nc2_labeltype.push_back(labeltype("C",0, 0, 1));
 
 	NCS test_nc2(nc2_name, nc2_spectra, nc2_labeltype);
 	NCS newtest = test_nc2;

@@ -14,12 +14,16 @@ using namespace std;
 class labeltype {
 public:
 	string name;
-	int  isotopes;
+	//int  isotopes;
 	//bool HN, CA, CO;
+
+	bool label_HN, label_CA, label_CO;
 	// 
-	labeltype(string lname = "X", int  lisotopes = 0) {
+	labeltype(string lname = "X", bool l_HN =0, bool l_CA=0, bool l_CO=0) {
 		name = lname;
-		isotopes = lisotopes;
+		label_HN = l_HN;
+		label_CA = l_CA;
+		label_CO = l_CO;
 	}
 
 	bool operator<(const labeltype & t2);
@@ -49,7 +53,8 @@ public:
 	vector<spectrum>spec_list;
 	vector<labeltype> label_types;
 	bool deuterated;
-	map<pattern_type, labeltype> label_dict;
+	//map<pattern_type, labeltype> label_dict
+	map<string, labeltype> label_dict;
 	vector <string> letters;
 	//vector <> spectra_numbers; 
 	map<labeltype, int> label_power;
@@ -63,7 +68,7 @@ public:
 	void make_coding_table(void); 
 	NCS& operator=(NCS& other);
 	string calc_code(string pattern_1, string pattern_2);
-
+	bool check_power(string new_pattern,int min_depth);
 };
 
 
@@ -78,7 +83,7 @@ public:
 	set <string> new_codes;
 	map <string, int> simplified;
 	bool good;
-	Scheme(string sname, NCS sncs, int  bsamples, vector <string>  bpatterns); //patterns
+	Scheme(string sname="", NCS sncs= NCS(), int  bsamples=0, vector <string>  bpatterns = {}); //patterns
 	Scheme& operator=(Scheme& other);
 	bool check_codes();
 	void simplify();
@@ -106,7 +111,7 @@ public:
 
 };
 
-/**
+
 class BlockFinder {
 	vector<labeltype> types;
 	int samples;
@@ -116,24 +121,27 @@ class BlockFinder {
 	vector <string> patterns; //temporary 
 	int depth;
 	int max_depth;
+	bool check_t_free;
+
+	int  min_t_free = -1; 
 	vector <int> counter; //temporary
 	vector <Scheme> back_up_schemes; 
-		self.result = {}
-		self.results_found = 0
-		string output;
-		self.iterator = 0
-		self.timer = time.time()
-		self.max_depth = 0
-		self.block_finder_mode = block_finder_mode
-		self.outputer = outputer
+	bool  block_finder_mode; 
+		
 
 
 
 
-	BlockFinder(int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode); //bfm? 
+	//BlockFinder( NCS bncs, int bmin_depth, bool bblock_finder_mode, int  bmin_t_free = -1);
+	BlockFinder(int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode, int bmin_t_free);
+	vector <string> generate_patterns(int  samples, bool top = true);
+
+
+
+		//bfm? 
 };
 
-**/
+
 
 
 /**

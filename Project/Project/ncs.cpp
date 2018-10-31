@@ -37,45 +37,45 @@ bool operator==(const labeltype& t1, const labeltype& t2) { //*
 
 int spectrum::has_signal(labeltype label_type_1, labeltype label_type_2) {
 		vector <bool> vec1, vec2;
-
+		/**
 		vec1.push_back(label_type_1.isotopes / 100 % 10);
 		vec1.push_back(label_type_1.isotopes / 10 % 10);
 		vec1.push_back(label_type_1.isotopes % 10);
 		vec1.push_back(label_type_2.isotopes / 100 % 10);
 		vec1.push_back(label_type_2.isotopes / 10 % 10);
-		vec1.push_back(label_type_2.isotopes % 10);
+		vec1.push_back(label_type_2.isotopes % 10);**/
 
-		vector<bool>  atom_list = vec1;
+		//vector<bool>  atom_list = vec1;
 
 		if (name == "HSQC") {
-			return int(atom_list[3]);
+			return int(label_type_2.label_HN);
 		}
 		else if (name == "HNCO") {
-			return int(atom_list[3] && atom_list[2]);
+			return int(label_type_2.label_HN &&  label_type_1.label_CO);
 		}
 
 		else if (name == "HNCA") {
-			return int(atom_list[3] && (atom_list[1] || atom_list[4]));
+			return int(label_type_2.label_HN && (label_type_1.label_CA || label_type_2.label_CA));
 		}
 
 		else if (name == "HNCOCA") {
-			return int(atom_list[3] && atom_list[2] && atom_list[1]);
+			return int(label_type_2.label_HN && label_type_1.label_CO && label_type_1.label_CA);
 		}
 
 		else if (name == "COfHNCA") {
-			return int(atom_list[3] && atom_list[1] &&  !(atom_list[2]));
+			return int(label_type_2.label_HN  && label_type_1.label_CA &&  !(label_type_1.label_CO));
 		}
 
 		else if (name == "DQHNCA") {
-			return int(atom_list[3] && atom_list[1] && atom_list[4]);
+			return int(label_type_2.label_HN && label_type_1.label_CA &&    label_type_2.label_CA);
 		}
 
 		else if (name == "HNCACO") {
-			return int(atom_list[3] && atom_list[4] && atom_list[5]);
+			return int(label_type_2.label_HN &&  label_type_2.label_CA && label_type_2.label_CO);
 		}
 
 		else if (name == "HNCAfCO") 
-			return int(atom_list[3] && !(atom_list[4]) && atom_list[5]);
+			return int(label_type_2.label_HN && !(label_type_2.label_CA) && label_type_2.label_CO);
 	}
 
 
@@ -99,14 +99,14 @@ class constants {
 		labeltype typeS("S", 101);
 		labeltype typeF("F", 011);
 		**/
-		labeltype typeX("X", 0);
-		labeltype typeN("N", 100);
-		labeltype typeC("C", 1);
-		labeltype typeD("D", 111);
-		labeltype typeA("A", 10);
-		labeltype typeT("T", 110);
-		labeltype typeS("S", 101);
-		labeltype typeF("F", 11);
+		labeltype typeX("X", 0, 0, 0);
+		labeltype typeN("N", 1, 0, 0);
+		labeltype typeC("C", 0, 0, 1);
+		labeltype typeD("D", 1,1 , 1);
+		labeltype typeA("A", 0, 1, 0);
+		labeltype typeT("T", 1, 1, 0);
+		labeltype typeS("S", 1, 0, 1);
+		labeltype typeF("F", 0, 1, 1);
 
 		const vector <labeltype> BASIC_TYPES = { typeX, typeN, typeC, typeD, typeA, typeT, typeS, typeF };
 		//const vector  <string> TYPES = {"X", "N", "C", "D", "A", "T", "S", "F"};
@@ -214,7 +214,21 @@ NCS& NCS::operator=(NCS& other){
 	}
 	return *this;
 }
+bool NCS::check_power(string new_pattern, int min_power) {
+	int power = 1; 
+	labeltype e; 
+	for (char label : new_pattern) {
+		e = label_dict[to_string(label)];
+		power = power * label_power[  e  ];  
+		
+		//power *= label_power[label_dict[label]];
+	} 
 
+	return (power >= min_power); 
+
+
+
+}
 
 string NCS::calc_code(string pattern_1, string pattern_2) {
 	string value = "";

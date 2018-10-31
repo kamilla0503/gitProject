@@ -1,4 +1,7 @@
-﻿  ncs.cpp
+﻿  ELBcpp.cpp
+c:\users\kamilla\desktop\gitproject\project\project\elbcpp.cpp(32): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\elbcpp.cpp(33): warning C4018: <: несоответствие типов со знаком и без знака
+  ncs.cpp
 c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(131): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(133): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(145): warning C4018: <: несоответствие типов со знаком и без знака
@@ -15,5 +18,9 @@ c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(321): warning C4101:
 c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(391): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(392): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(423): warning C4018: <: несоответствие типов со знаком и без знака
+  ncs_test.cpp
+c:\users\kamilla\desktop\gitproject\project\project\ncs_test.cpp(68): warning C4018: <: несоответствие типов со знаком и без знака
+  Source.cpp
+  Создание кода...
 c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(79): warning C4715: spectrum::has_signal: значение возвращается не при всех путях выполнения
   Project.vcxproj -> C:\Users\Kamilla\Desktop\gitProject\Project\Debug\Project.exe
