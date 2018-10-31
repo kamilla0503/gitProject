@@ -14,12 +14,14 @@ using namespace std;
 class labeltype {
 public:
 	string name;
-	int  isotopes;
+	bool label_HN, label_CA, label_CO;
 	//bool HN, CA, CO;
 	// 
-	labeltype(string lname = "X", int  lisotopes = 0) {
+	labeltype(string lname = "X", bool l_HN, bool l_CA, bool l_CO) {
 		name = lname;
-		isotopes = lisotopes;
+                label_HN = l_HN ;
+		label_CA = l_CA ;
+		label_CO = l_CO ;
 	}
 
 	bool operator<(const labeltype & t2);
