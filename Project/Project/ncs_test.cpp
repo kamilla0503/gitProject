@@ -16,6 +16,16 @@ int main(int argc, char **argv)
 
 	nc2_spectra.push_back(spectrum("HSQC"));
 	nc2_spectra.push_back(spectrum("HNCO"));
+	//nc2_spectra.push_back(spectrum("HNCA"));
+	//nc2_spectra.push_back(spectrum("HNCOCA"));
+	//nc2_spectra.push_back(spectrum("DQHNCA"));
+	//nc2_spectra.push_back(spectrum("COfHNCA"));
+	//nc2_spectra.push_back(spectrum("HNCACO"));
+	//nc2_spectra.push_back(spectrum("HNCAfCO"));
+
+
+
+
 
 	nc2_labeltype.push_back(labeltype("X", 0));
 	nc2_labeltype.push_back(labeltype("N", 100));
@@ -31,6 +41,10 @@ int main(int argc, char **argv)
 	//cout << test_nc2.codes_dict[nc2_labeltype[0]][nc2_labeltype[0]] << " ";
 	cout << " see " << endl;
 	cout << newtest.codes_dict[nc2_labeltype[0]][nc2_labeltype[0]] << " ";
+
+	//map < NCS, int > s;
+	//s[test_nc2] = 3;
+	//cout << " * " << s[test_nc2] << endl; 
 
 
 	for (labeltype type_1 : test_nc2.label_types)
@@ -63,8 +77,25 @@ int main(int argc, char **argv)
 
 	getchar();
 
+	string s1 = "NNNCCCXXX";
+	string s2 = "NCXNCXNCX";
+	string code = test_nc2.calc_code(s1, s2);
+	cout << "s1=  " << s1<<endl;
+	cout << "s2=  " << s2 << endl;
+	cout << "code=" << code << endl;
+
+
+	string r1 = simplify_pattern2(s1);
+
+	string r2 = simplify_pattern2(s2);
+	cout << "Sp " << r1 << endl; 
+	cout << "Sp " <<  r2 << endl;
+
+
+
+
+	getchar();
 
 	return 0;
 }
-
 

@@ -249,18 +249,38 @@ bool Scheme::check_codes() {
 	return true;
 }
 
+Scheme& Scheme::operator=(Scheme& other) {
+	if (this != &other) {  //?
+		name = other.name;
+		 ncs = other.ncs;
+		samples = other.samples;
+		patterns == other.patterns;
+		codes = other.codes;
+		new_codes = other.new_codes;
+		simplified = other.simplified;
+		good = other.good;
+	}
+	return *this;
+}
 
-string simplify_pattern(string pattern) {
+
+string simplify_pattern(string pattern) { // instead TYPES 
 	string result = "";
+	cout << "start" << endl ; 
 	const vector  <string> TYPES = { "X", "N", "C", "D", "A", "T", "S", "F" };
 	vector <int> simple_form; 
 	for (int i = 0; i < TYPES.size(); i++) {
 		simple_form.push_back(0);
 	}
+
+	cout << simple_form[2] << endl; 
 	for (char label: pattern) {
 		for (int i = 0; i < TYPES.size(); i++) {
-			if (TYPES[i] == to_string(label)) {
+			cout << TYPES[i] << " Type " << label << " l" << endl; 
+			if (TYPES[i][0] == label) {
+				cout << "we are here " << endl; 
 				simple_form[i] = simple_form[i] + 1;
+				cout << simple_form[i] << endl;
 				continue;
 			}
 
@@ -269,15 +289,57 @@ string simplify_pattern(string pattern) {
 
 	char b;
 	for ( int a : simple_form) {
-		b = static_cast<char>(a);
+		//b = <char>(a);
+		//cout << " a " << a << "b " << b << endl; 
+		result = result + to_string(a); 
 		//result.push_back(char(a));
-		result.push_back(b);
+		//result.push_back(b);
+	}
+	cout << result << endl; 
+
+	return result;
+}
+
+
+
+
+string simplify_pattern2(string pattern) { // instead TYPES 
+	string result = "";
+	static map <  char, int> res; 
+	static  vector  <char> TYPES = { 'X', 'N', 'C', 'D', 'A', 'T', 'S', 'F' };
+	res = { {'X' , 0}, {'N',1}, {'C',2}, {'D',3}, {'A',4}, {'T',5}, {'S', 6}, {'F',7} }; 
+	//static map < char, int > TYPES; 
+	vector <int> simple_form;
+	for (int i = 0; i < TYPES.size(); i++) {
+		simple_form.push_back(0);
+	}
+	for (char label : pattern){
+		simple_form[res[label]] = simple_form[res[label]] + 1;
+		cout << (res[label]) << endl ;
+	}
+
+	char b;
+	for ( int  a : simple_form) {
+		result = result + to_string(a);
+		//b = static_cast<char>(a);
+		//result.push_back(char(a));
+		//result.push_back(a);
 	}
 	return result;
 }
 
+
+
+
+
+
+
+
+
+
+
 void Scheme::simplify() {
-	map <string, int> simplified;
+	map <pattern_type, int> simplified;
 	string simple_pattern;
 	for (string pattern : patterns) {
 		simple_pattern = simplify_pattern(pattern);

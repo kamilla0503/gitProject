@@ -1,21 +1,19 @@
-﻿  ELBcpp.cpp
-  ncs.cpp
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(128): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(130): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(142): warning C4018: <: несоответствие типов со знаком и без знака
+﻿  ncs.cpp
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(131): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(133): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(145): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(168): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(184): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(148): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(171): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(187): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(219): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(254): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(258): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(326): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(327): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(358): warning C4018: <: несоответствие типов со знаком и без знака
-  ncs_test.cpp
-c:\users\kamilla\desktop\gitproject\project\project\ncs_test.cpp(7): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
-c:\users\kamilla\desktop\gitproject\project\project\ncs_test.cpp(54): warning C4018: <: несоответствие типов со знаком и без знака
-  Создание кода...
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(76): warning C4715: spectrum::has_signal: значение возвращается не при всех путях выполнения
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(190): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(222): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(272): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(278): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(290): warning C4101: b: неиспользованная локальная переменная
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(313): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(321): warning C4101: b: неиспользованная локальная переменная
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(391): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(392): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(423): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(79): warning C4715: spectrum::has_signal: значение возвращается не при всех путях выполнения
   Project.vcxproj -> C:\Users\Kamilla\Desktop\gitProject\Project\Debug\Project.exe

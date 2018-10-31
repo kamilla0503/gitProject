@@ -5,6 +5,10 @@
 #include<vector>
 #include<map>
 #include<set>
+#include <fstream>
+#include<iostream>
+#include<regex>
+//#include<tr1>
 using namespace std;
 
 class labeltype {
@@ -36,6 +40,8 @@ public:
 	int has_signal(labeltype label_type_1, labeltype label_type_2);
 };
 
+typedef string pattern_type;
+
 class NCS {
 public:
 	const vector <string> NITRO_TYPES = { "N", "D", "S", "T" };
@@ -43,7 +49,7 @@ public:
 	vector<spectrum>spec_list;
 	vector<labeltype> label_types;
 	bool deuterated;
-	map<string, labeltype> label_dict;
+	map<pattern_type, labeltype> label_dict;
 	vector <string> letters;
 	//vector <> spectra_numbers; 
 	map<labeltype, int> label_power;
@@ -72,7 +78,8 @@ public:
 	set <string> new_codes;
 	map <string, int> simplified;
 	bool good;
-	Scheme(string sname, NCS sncs, int  bsamples, vector <string>  bpatterns); //patterns 
+	Scheme(string sname, NCS sncs, int  bsamples, vector <string>  bpatterns); //patterns
+	Scheme& operator=(Scheme& other);
 	bool check_codes();
 	void simplify();
 	bool check_patterns(vector <string> patterns);
@@ -92,11 +99,61 @@ public:
 	map <string, int> simplified;
 	void simplify();
 	ELB(vector <string> bpatterns, string bncs_name, bool bdeuterated = false);
+
+	bool eq(Scheme scheme); 
+	void sort();
+	//bool is_subset_of(map <string, int>);
+
 };
+
+/**
+class BlockFinder {
+	vector<labeltype> types;
+	int samples;
+	NCS ncs;
+	int min_depth; 
+	Scheme scheme;
+	vector <string> patterns; //temporary 
+	int depth;
+	int max_depth;
+	vector <int> counter; //temporary
+	vector <Scheme> back_up_schemes; 
+		self.result = {}
+		self.results_found = 0
+		string output;
+		self.iterator = 0
+		self.timer = time.time()
+		self.max_depth = 0
+		self.block_finder_mode = block_finder_mode
+		self.outputer = outputer
+
+
+
+
+	BlockFinder(int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode); //bfm? 
+};
+
+**/
+
+
+/**
+class Product {
+public:
+	all_blocks;
+	product_list;
+
+	Product(all_blocks, product_list);
+
+
+
+};**/
 
 
 //for scheme (patterns) 
 bool pattern_bigger(string pattern1, string  pattern2);
 string simplify_pattern(string pattern);
-
+string simplify_pattern2(string pattern);
 #endif  // NCS_H_INCLUDED
+
+//def read_blocks(block_file, logger = None);
+//void read_blocks(string block_file,  logger, string *result,map<  , > blocks, string *ncs_name ,bool *deuterated);
