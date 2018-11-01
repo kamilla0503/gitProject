@@ -8,6 +8,10 @@
 #include <fstream>
 #include<iostream>
 #include<regex>
+#include<tuple>
+
+
+
 //#include<tr1>
 using namespace std;
 
@@ -30,13 +34,11 @@ public:
 
 };
 
-
+labeltype typeT("T", 1, 1, 0);
 
 bool operator<(const labeltype& t1, const labeltype& t2);
 bool operator==(const labeltype& t1, const string& s2);
 bool operator==(const string& s1, const labeltype& t2);
-
-
 class spectrum {
 public:
 	string name;
@@ -67,6 +69,7 @@ public:
 	NCS(string name_ncs = "", vector<spectrum>spectra_list_ncs = {}, vector<labeltype> label_types_ncs = {}, bool deuterated_ncs = 0);
 	void make_coding_table(void); 
 	NCS& operator=(NCS& other);
+	//NCS& operator=(const NCS& other);
 	string calc_code(string pattern_1, string pattern_2);
 	bool check_power(string new_pattern,int min_depth);
 };
@@ -85,6 +88,7 @@ public:
 	bool good;
 	Scheme(string sname="", NCS sncs= NCS(), int  bsamples=0, vector <string>  bpatterns = {}); //patterns
 	Scheme& operator=(Scheme& other);
+	//Scheme& operator=(const Scheme& other);
 	bool check_codes();
 	void simplify();
 	bool check_patterns(vector <string> patterns);
@@ -93,8 +97,16 @@ public:
 	void add_pattern(string new_pattern); 
 	bool try_pattern(string  new_pattern);
 	Scheme direct_product(Scheme scheme);
-
+	string full_str();
+	bool operator==(const Scheme & t2);
+	bool operator<(const Scheme & t2);
 };
+
+bool operator<(const Scheme& t1, const Scheme& t2);
+bool operator==(const  Scheme& t1, const  Scheme& t2); 
+
+
+
 
 class ELB {
 public: 
@@ -118,26 +130,31 @@ class BlockFinder {
 	NCS ncs;
 	int min_depth; 
 	Scheme scheme;
-	vector <string> patterns; //temporary 
+	//vector <string> patterns; //temporary 
+	//new?
+	 vector <vector <string> >patterns;
 	int depth;
 	int max_depth;
 	bool check_t_free;
 
 	int  min_t_free = -1; 
-	vector <int> counter; //temporary
-	vector <Scheme> back_up_schemes; 
+	vector <int> counter = {}; //temporary
+	vector <Scheme> back_up_schemes = {};
 	bool  block_finder_mode; 
-		
-
-
-
+	int results_found; 
+	map <int, set< Scheme>> result;//soe
+	int iterator; 
+	int index_of_type_T;
 
 	//BlockFinder( NCS bncs, int bmin_depth, bool bblock_finder_mode, int  bmin_t_free = -1);
 	BlockFinder(int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode, int bmin_t_free);
 	vector <string> generate_patterns(int  samples, bool top = true);
-
-
-
+	void start_blockfinder();
+	void maincycle();
+	void go_back();
+	void save_result(Scheme nscheme);
+	bool check_have_enought_t_free(Scheme scheme, vector<string>  patterns_left);
+	
 		//bfm? 
 };
 
@@ -161,6 +178,12 @@ public:
 bool pattern_bigger(string pattern1, string  pattern2);
 string simplify_pattern(string pattern);
 string simplify_pattern2(string pattern);
+map <string, int>  simplify_list_of_patterns(vector<string> list_of_patterns); 
+tuple<int, int > count_type_in_list_of_simplified(map <string, int> simplified, int index_of_type); 
+int index_of_type(labeltype label_type);
+tuple<int, int > count_type_in_list_of_patterns(vector<string>  patterns,labeltype label_type);
+
+
 #endif  // NCS_H_INCLUDED
 
 //def read_blocks(block_file, logger = None);

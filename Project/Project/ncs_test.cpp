@@ -91,7 +91,11 @@ int main(int argc, char **argv)
 	cout << "Sp " << r1 << endl; 
 	cout << "Sp " <<  r2 << endl;
 
-
+	Scheme scheme("1", test_nc2, 2, {});
+	Scheme scheme2 = scheme;
+	set <Scheme> s;
+	s.insert(scheme); 
+	//s.insert(scheme2);
 
 
 	getchar();

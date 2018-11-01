@@ -22,6 +22,19 @@ bool operator<(const labeltype& t1, const labeltype& t2) {
 	return (t1.name < t2.name);
 }
 
+
+
+
+bool operator<(const Scheme& t1, const Scheme& t2) {
+	return (t1.name < t2.name);
+}
+
+bool Scheme::operator<(const Scheme& t2) {
+	return (this->name < t2.name);
+}
+
+
+
 bool operator==(const labeltype& t1, const string& s2) {
 	return (t1.name == s2);
 }
@@ -108,7 +121,9 @@ class constants {
 		labeltype typeS("S", 1, 0, 1);
 		labeltype typeF("F", 0, 1, 1);
 
-		const vector <labeltype> BASIC_TYPES = { typeX, typeN, typeC, typeD, typeA, typeT, typeS, typeF };
+		//const vector <labeltype> BASIC_TYPES = { typeX, typeN, typeC, typeD, typeA, typeT, typeS, typeF };
+		const map <labeltype, int>BASIC_TYPES = { {typeX, 0}, {typeN,1}, {typeC, 2}, {typeD,3}, {typeA, 4}, {typeT,5}, {typeS, 6}, {typeF,7} };
+
 		//const vector  <string> TYPES = {"X", "N", "C", "D", "A", "T", "S", "F"};
 
 
@@ -214,6 +229,26 @@ NCS& NCS::operator=(NCS& other){
 	}
 	return *this;
 }
+
+
+/**
+NCS& NCS::operator=(const NCS& other) {
+	if (this != &other) {  //?
+		name = other.name;
+		spec_list = other.spec_list;
+		label_types = other.label_types;
+		deuterated = other.deuterated;
+		label_dict = other.label_dict;
+		letters = other.letters;
+		label_power = other.label_power;
+		codes_dict = other.codes_dict;
+		vectors = other.vectors;
+	}
+	return *this;
+}
+**/
+
+
 bool NCS::check_power(string new_pattern, int min_power) {
 	int power = 1; 
 	labeltype e; 
@@ -268,7 +303,7 @@ Scheme& Scheme::operator=(Scheme& other) {
 		name = other.name;
 		 ncs = other.ncs;
 		samples = other.samples;
-		patterns == other.patterns;
+		patterns = other.patterns;
 		codes = other.codes;
 		new_codes = other.new_codes;
 		simplified = other.simplified;
@@ -276,6 +311,24 @@ Scheme& Scheme::operator=(Scheme& other) {
 	}
 	return *this;
 }
+
+/**
+Scheme& Scheme::operator=(  const Scheme& other) {
+	if (this != &other) {  //?
+		name = other.name;
+		ncs = other.ncs;
+		samples = other.samples;
+		patterns = other.patterns;
+		codes = other.codes;
+		new_codes = other.new_codes;
+		simplified = other.simplified;
+		good = other.good;
+	}
+	return *this;
+}**/
+
+
+
 
 
 string simplify_pattern(string pattern) { // instead TYPES 
@@ -301,7 +354,7 @@ string simplify_pattern(string pattern) { // instead TYPES
 		}
 	}
 
-	char b;
+	
 	for ( int a : simple_form) {
 		//b = <char>(a);
 		//cout << " a " << a << "b " << b << endl; 
@@ -332,7 +385,7 @@ string simplify_pattern2(string pattern) { // instead TYPES
 		cout << (res[label]) << endl ;
 	}
 
-	char b;
+	
 	for ( int  a : simple_form) {
 		result = result + to_string(a);
 		//b = static_cast<char>(a);
@@ -429,6 +482,23 @@ void Scheme::add_pattern(string new_pattern) {
 	simplify();
 }
 
+
+bool Scheme::operator==(const Scheme& t2) {
+	return (this->name == t2.name);
+}
+
+bool operator==(const  Scheme& t1, const  Scheme& t2) { //*
+	return (t1.name == t2.name);
+}
+
+/**
+bool Scheme::operator<(const Scheme& t2) {
+	return (this->name < t2.name);
+}**/
+
+
+
+
 bool pattern_bigger( string pattern1, string  pattern2) {
 	char type1, type2;
 	//const vector  <char> TYPES = { char("X"), char("N"), char("C", "D", "A", "T", "S", "F" };
@@ -498,7 +568,20 @@ Scheme Scheme::direct_product(Scheme scheme) {
 }
 
 
+string Scheme::full_str() {
+	string s = ""; 
+	string all_p = "";
 
+	for (string i : patterns) {
+		all_p = all_p + i + " \n";
+
+
+	}
+
+	s ="[ELB samples = " + to_string(samples) + " patterns = " + to_string(patterns.size()) + all_p;
+
+	return s; 
+}
 
 
 
