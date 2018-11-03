@@ -347,7 +347,7 @@ string simplify_pattern(string pattern) { // instead TYPES
 			if (TYPES[i][0] == label) {
 				cout << "we are here " << endl; 
 				simple_form[i] = simple_form[i] + 1;
-				cout << simple_form[i] << endl;
+				//cout << simple_form[i] << endl;
 				continue;
 			}
 
@@ -362,7 +362,7 @@ string simplify_pattern(string pattern) { // instead TYPES
 		//result.push_back(char(a));
 		//result.push_back(b);
 	}
-	cout << result << endl; 
+	//cout << result << endl; 
 
 	return result;
 }
@@ -382,7 +382,7 @@ string simplify_pattern2(string pattern) { // instead TYPES
 	}
 	for (char label : pattern){
 		simple_form[res[label]] = simple_form[res[label]] + 1;
-		cout << (res[label]) << endl ;
+		//cout << (res[label]) << endl ;
 	}
 
 	
