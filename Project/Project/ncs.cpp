@@ -22,6 +22,19 @@ bool operator<(const labeltype& t1, const labeltype& t2) {
 	return (t1.name < t2.name);
 }
 
+
+
+
+bool operator<(const Scheme& t1, const Scheme& t2) {
+	return (t1.name < t2.name);
+}
+
+bool Scheme::operator<(const Scheme& t2) {
+	return (this->name < t2.name);
+}
+
+
+
 bool operator==(const labeltype& t1, const string& s2) {
 	return (t1.name == s2);
 }
@@ -99,16 +112,18 @@ class constants {
 		labeltype typeS("S", 101);
 		labeltype typeF("F", 011);
 		**/
-		labeltype typeX("X", 0, 0, 0);
-		labeltype typeN("N", 1, 0, 0);
-		labeltype typeC("C", 0, 0, 1);
-		labeltype typeD("D", 1,1 , 1);
-		labeltype typeA("A", 0, 1, 0);
-		labeltype typeT("T", 1, 1, 0);
-		labeltype typeS("S", 1, 0, 1);
-		labeltype typeF("F", 0, 1, 1);
+		labeltype typeX('X', 0, 0, 0);
+		labeltype typeN('N', 1, 0, 0);
+		labeltype typeC('C', 0, 0, 1);
+		labeltype typeD('D', 1,1 , 1);
+		labeltype typeA('A', 0, 1, 0);
+		labeltype typeT('T', 1, 1, 0);
+		labeltype typeS('S', 1, 0, 1);
+		labeltype typeF('F', 0, 1, 1);
 
-		const vector <labeltype> BASIC_TYPES = { typeX, typeN, typeC, typeD, typeA, typeT, typeS, typeF };
+		//const vector <labeltype> BASIC_TYPES = { typeX, typeN, typeC, typeD, typeA, typeT, typeS, typeF };
+		const map <labeltype, int>BASIC_TYPES = { {typeX, 0}, {typeN,1}, {typeC, 2}, {typeD,3}, {typeA, 4}, {typeT,5}, {typeS, 6}, {typeF,7} };
+
 		//const vector  <string> TYPES = {"X", "N", "C", "D", "A", "T", "S", "F"};
 
 
@@ -122,7 +137,7 @@ class constants {
 		for (labeltype l : label_types) {
 			label_dict[l.name] = l;
 		}
-		letters = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
+		letters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j' };
 		make_coding_table(); 
 	}
 
@@ -176,7 +191,10 @@ class constants {
 			}
 			set <string> s(result.begin(), result.end());
 			power = s.size();
+			
 			label_power[label_types[i]] = power;
+			cout << "NCS POWER" << label_power[label_types[i]] << endl;
+
 			if (power == 1 and find(NITRO_TYPES.begin(), NITRO_TYPES.end(), label_types[i]) != NITRO_TYPES.end()) {
 
 				throw ("Error");
@@ -214,16 +232,41 @@ NCS& NCS::operator=(NCS& other){
 	}
 	return *this;
 }
+
+
+/**
+NCS& NCS::operator=(const NCS& other) {
+	if (this != &other) {  //?
+		name = other.name;
+		spec_list = other.spec_list;
+		label_types = other.label_types;
+		deuterated = other.deuterated;
+		label_dict = other.label_dict;
+		letters = other.letters;
+		label_power = other.label_power;
+		codes_dict = other.codes_dict;
+		vectors = other.vectors;
+	}
+	return *this;
+}
+**/
+
+
 bool NCS::check_power(string new_pattern, int min_power) {
 	int power = 1; 
 	labeltype e; 
+	//cout << "check power" << endl; 
 	for (char label : new_pattern) {
-		e = label_dict[to_string(label)];
-		power = power * label_power[  e  ];  
+		e = label_dict[label];
 		
+		//cout << e.name << endl;
+		power = power * label_power[  e  ];  
+		//cout << label << endl; 
+		//cout << "label  " << label << " label_dict[to_string(label)]   " << e.name << endl; 
+		//cout << "   label[power] is "  <<label_power[e] << endl;
 		//power *= label_power[label_dict[label]];
 	} 
-
+	//cout <<  "return or ot " <<  (power >= min_power) << endl;
 	return (power >= min_power); 
 
 
@@ -232,7 +275,7 @@ bool NCS::check_power(string new_pattern, int min_power) {
 
 string NCS::calc_code(string pattern_1, string pattern_2) {
 	string value = "";
-	string s1, s2; 
+	char s1, s2; 
 	for (int i = 0; i < pattern_1.size(); i++) {
 		s1 = pattern_1[i]; // change? 
 		s2 = pattern_2[i];
@@ -268,7 +311,7 @@ Scheme& Scheme::operator=(Scheme& other) {
 		name = other.name;
 		 ncs = other.ncs;
 		samples = other.samples;
-		patterns == other.patterns;
+		patterns = other.patterns;
 		codes = other.codes;
 		new_codes = other.new_codes;
 		simplified = other.simplified;
@@ -276,6 +319,24 @@ Scheme& Scheme::operator=(Scheme& other) {
 	}
 	return *this;
 }
+
+/**
+Scheme& Scheme::operator=(  const Scheme& other) {
+	if (this != &other) {  //?
+		name = other.name;
+		ncs = other.ncs;
+		samples = other.samples;
+		patterns = other.patterns;
+		codes = other.codes;
+		new_codes = other.new_codes;
+		simplified = other.simplified;
+		good = other.good;
+	}
+	return *this;
+}**/
+
+
+
 
 
 string simplify_pattern(string pattern) { // instead TYPES 
@@ -294,14 +355,14 @@ string simplify_pattern(string pattern) { // instead TYPES
 			if (TYPES[i][0] == label) {
 				cout << "we are here " << endl; 
 				simple_form[i] = simple_form[i] + 1;
-				cout << simple_form[i] << endl;
+				//cout << simple_form[i] << endl;
 				continue;
 			}
 
 		}
 	}
 
-	char b;
+	
 	for ( int a : simple_form) {
 		//b = <char>(a);
 		//cout << " a " << a << "b " << b << endl; 
@@ -309,7 +370,7 @@ string simplify_pattern(string pattern) { // instead TYPES
 		//result.push_back(char(a));
 		//result.push_back(b);
 	}
-	cout << result << endl; 
+	//cout << result << endl; 
 
 	return result;
 }
@@ -329,10 +390,10 @@ string simplify_pattern2(string pattern) { // instead TYPES
 	}
 	for (char label : pattern){
 		simple_form[res[label]] = simple_form[res[label]] + 1;
-		cout << (res[label]) << endl ;
+		//cout << (res[label]) << endl ;
 	}
 
-	char b;
+	
 	for ( int  a : simple_form) {
 		result = result + to_string(a);
 		//b = static_cast<char>(a);
@@ -403,7 +464,7 @@ bool Scheme::check_patterns(vector <string> patterns) {
 void Scheme::sort() { //* 
 	string temp_pattern;
 	for (int i = 0; i < (patterns.size() - 1); i++) {
-		for (int j = 0; i < (patterns.size() -i-1); j++) {
+		for (int j = 0; j < (patterns.size() -i-1); j++) {
 			if (pattern_bigger(patterns[i], patterns[i + j + 1])) {
 				temp_pattern = patterns[i];
 				patterns[i] = patterns[i + j + 1];
@@ -428,6 +489,23 @@ void Scheme::add_pattern(string new_pattern) {
 	add_new_codes(new_pattern);
 	simplify();
 }
+
+
+bool Scheme::operator==(const Scheme& t2) {
+	return (this->name == t2.name);
+}
+
+bool operator==(const  Scheme& t1, const  Scheme& t2) { //*
+	return (t1.name == t2.name);
+}
+
+/**
+bool Scheme::operator<(const Scheme& t2) {
+	return (this->name < t2.name);
+}**/
+
+
+
 
 bool pattern_bigger( string pattern1, string  pattern2) {
 	char type1, type2;
@@ -498,7 +576,20 @@ Scheme Scheme::direct_product(Scheme scheme) {
 }
 
 
+string Scheme::full_str() {
+	string s = ""; 
+	string all_p = "";
 
+	for (string i : patterns) {
+		all_p = all_p + i + " \n";
+
+
+	}
+
+	s ="[ELB samples = " + to_string(samples) + " patterns = " + to_string(patterns.size()) + " \n"+ all_p;
+
+	return s; 
+}
 
 
 
