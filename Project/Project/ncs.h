@@ -17,13 +17,13 @@ using namespace std;
 
 class labeltype {
 public:
-	string name;
+	//string name;
 	//int  isotopes;
 	//bool HN, CA, CO;
-
+	char name; 
 	bool label_HN, label_CA, label_CO;
 	// 
-	labeltype(string lname = "X", bool l_HN =0, bool l_CA=0, bool l_CO=0) {
+	labeltype(char lname = 'X', bool l_HN =0, bool l_CA=0, bool l_CO=0) {
 		name = lname;
 		label_HN = l_HN;
 		label_CA = l_CA;
@@ -34,7 +34,7 @@ public:
 
 };
 
-labeltype typeT("T", 1, 1, 0);
+//labeltype typeT("T", 1, 1, 0);
 
 bool operator<(const labeltype& t1, const labeltype& t2);
 bool operator==(const labeltype& t1, const string& s2);
@@ -50,14 +50,14 @@ typedef string pattern_type;
 
 class NCS {
 public:
-	const vector <string> NITRO_TYPES = { "N", "D", "S", "T" };
+	const vector <char> NITRO_TYPES = { 'N', 'D', 'S', 'T' };
 	string name;
 	vector<spectrum>spec_list;
 	vector<labeltype> label_types;
 	bool deuterated;
 	//map<pattern_type, labeltype> label_dict
-	map<string, labeltype> label_dict;
-	vector <string> letters;
+	map<char, labeltype> label_dict;
+	vector <char> letters;
 	//vector <> spectra_numbers; 
 	map<labeltype, int> label_power;
 	map <labeltype, map <labeltype, string>> codes_dict;
@@ -125,6 +125,7 @@ public:
 
 
 class BlockFinder {
+public: 
 	vector<labeltype> types;
 	int samples;
 	NCS ncs;
@@ -148,7 +149,7 @@ class BlockFinder {
 	string out1 ;
 	//BlockFinder( NCS bncs, int bmin_depth, bool bblock_finder_mode, int  bmin_t_free = -1);
 	BlockFinder(int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode, int bmin_t_free);
-	vector <string> generate_patterns(int  samples, bool top = true);
+	vector <string> generate_patterns(int  samples, bool top = true );
 	void start_blockfinder();
 	void maincycle();
 	void go_back();
@@ -159,7 +160,7 @@ class BlockFinder {
 	void go_deeper(vector <string> next_patterns);
 	void go_parallel();
 	void check_max_depth();
-	void find();
+	void find_schemes();
 	void blockfinder_finished();
 		//bfm? 
 };

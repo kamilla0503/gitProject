@@ -27,9 +27,9 @@ int main(int argc, char **argv)
 
 
 
-	nc2_labeltype.push_back(labeltype("X", 0, 0, 0));
-	nc2_labeltype.push_back(labeltype("N", 1,0,0));
-	nc2_labeltype.push_back(labeltype("C",0, 0, 1));
+	nc2_labeltype.push_back(labeltype('X', 0, 0, 0));
+	nc2_labeltype.push_back(labeltype('N', 1,0,0));
+	nc2_labeltype.push_back(labeltype('C',0, 0, 1));
 
 	NCS test_nc2(nc2_name, nc2_spectra, nc2_labeltype);
 	NCS newtest = test_nc2;
@@ -75,6 +75,16 @@ int main(int argc, char **argv)
 		cout << endl;
 	}
 
+	cout << " label_dict " << endl; 
+
+	for (auto  code : test_nc2.label_dict) {
+		cout << code.first << " " << code.second.name << endl;
+
+
+	}
+
+
+
 	getchar();
 
 	string s1 = "NNNCCCXXX";
@@ -99,16 +109,35 @@ int main(int argc, char **argv)
 
 
 	getchar();
+	int samp = 2; 
+	BlockFinder b(samp, test_nc2,1, false,-1  );
+
+	
 
 
 
+	cout << "!!!" << endl; 
+	//cout << b.patterns[0][0] << endl;
+
+	for (int i = 0; i < b.patterns.size(); i++) {
+		for (int j = 0; j < b.patterns[i].size(); j++) {
+			cout << b.patterns[i][j] << " "; 
+
+		}
+
+		cout << endl;
+
+	}
 
 
+	getchar();
 
 
+	b.find_schemes(); 
 
-
-
+	cout << b.results_found << " found " << endl; 
+	cout << b.output << endl;
+	getchar();
 	return 0;
 }
 
