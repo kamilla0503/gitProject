@@ -320,6 +320,21 @@ Scheme& Scheme::operator=(Scheme& other) {
 	return *this;
 }
 
+void Scheme::setscheme(string sname , NCS sncs , int  bsamples , vector <string>  bpatterns) {
+	name = sname;
+	patterns = bpatterns;
+	samples = bsamples;
+	//ncs = NCS(sncs.name, sncs.spec_list, sncs.label_types, sncs.deuterated);
+	ncs = sncs;
+	set <string> codes; //
+	good = check_codes();
+	map <string, int> simplified;//
+	simplify();
+	set <string> new_codes;
+
+}
+
+
 /**
 Scheme& Scheme::operator=(  const Scheme& other) {
 	if (this != &other) {  //?
@@ -341,19 +356,19 @@ Scheme& Scheme::operator=(  const Scheme& other) {
 
 string simplify_pattern(string pattern) { // instead TYPES 
 	string result = "";
-	cout << "start" << endl ; 
+	//cout << "start" << endl ; 
 	const vector  <string> TYPES = { "X", "N", "C", "D", "A", "T", "S", "F" };
 	vector <int> simple_form; 
 	for (int i = 0; i < TYPES.size(); i++) {
 		simple_form.push_back(0);
 	}
 
-	cout << simple_form[2] << endl; 
+	//cout << simple_form[2] << endl; 
 	for (char label: pattern) {
 		for (int i = 0; i < TYPES.size(); i++) {
-			cout << TYPES[i] << " Type " << label << " l" << endl; 
+			//cout << TYPES[i] << " Type " << label << " l" << endl; 
 			if (TYPES[i][0] == label) {
-				cout << "we are here " << endl; 
+				//cout << "we are here " << endl; 
 				simple_form[i] = simple_form[i] + 1;
 				//cout << simple_form[i] << endl;
 				continue;

@@ -99,7 +99,10 @@ public:
 	Scheme direct_product(Scheme scheme);
 	string full_str();
 	bool operator==(const Scheme & t2);
+	void setscheme(string sname = "", NCS sncs = NCS(), int  bsamples = 0, vector <string>  bpatterns = {});
 	bool operator<(const Scheme & t2);
+
+
 };
 
 bool operator<(const Scheme& t1, const Scheme& t2);
@@ -131,6 +134,9 @@ public:
 	NCS ncs;
 	int min_depth; 
 	Scheme scheme;
+
+	//Scheme scheme("1", ncs, samples, {});
+
 	//vector <string> patterns; //temporary 
 	//new?
 	 vector <vector <string>> patterns;

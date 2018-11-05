@@ -1,7 +1,5 @@
-﻿  ELBcpp.cpp
-c:\users\kamilla\desktop\gitproject\project\project\elbcpp.cpp(32): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\elbcpp.cpp(33): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\elbcpp.cpp(163): warning C4018: >: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\elbcpp.cpp(180): warning C4018: >=: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\elbcpp.cpp(199): warning C4018: >=: несоответствие типов со знаком и без знака
+﻿  ncs_test.cpp
+c:\users\kamilla\desktop\gitproject\project\project\ncs_test.cpp(68): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs_test.cpp(122): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs_test.cpp(123): warning C4018: <: несоответствие типов со знаком и без знака
   Project.vcxproj -> C:\Users\Kamilla\Desktop\gitProject\Project\Debug\Project.exe
