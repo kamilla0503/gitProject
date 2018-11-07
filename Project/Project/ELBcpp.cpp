@@ -72,7 +72,7 @@ BlockFinder::BlockFinder( int bsamples, NCS bncs, int bmin_depth, bool bblock_fi
 	iterator = 0;
 	output = "";
 	out1 = "";
-	map <int, set< Scheme>> result;
+	//map <int, set< Scheme>> result;
 	
 
 }
@@ -184,15 +184,14 @@ void BlockFinder::maincycle() {
 		back_up_schemes.push_back(scheme);
 		//cout << "sceme is apeended " << scheme.samples <<""   << scheme.name <<endl; 
 		scheme.add_pattern(patternscurrent[counter[depth]]);
-
+		//cout << "check cs for first save " << scheme.patterns.size() << " " << min_depth << endl; 
 		if (patterns_left < (min_depth - depth - 1)   ) {
 			go_back();
 			continue;
 		}
-
 		if (patterns_left == 0) {
 			if (scheme.patterns.size() >= min_depth) {
-				//cout << "save or not " << endl;
+				cout << "save or not " << endl;
 				save_result();
 			}
 			go_back();
@@ -218,7 +217,7 @@ void BlockFinder::maincycle() {
 		}
 		else {
 			if (scheme.patterns.size() >= min_depth) {
-				//cout << "save or not " << endl;
+				cout << "save or not  2" << endl;
 				save_result();
 			}
 			go_parallel();
@@ -299,16 +298,27 @@ void BlockFinder::save_result() {
 	int depth_of_scheme = scheme.patterns.size(); 
 	Scheme new_scheme = scheme;
 	new_scheme.sort();
+	// << "check conditions " << (result.find(depth_of_scheme) != result.end()) << depth_of_scheme << endl;
+	
 	if(	result.find(depth_of_scheme) != result.end() ){ //casd 
+		cout << " conditions are ok  " << endl; 
 		//if (find(result[depth_of_scheme].begin(), result[depth_of_scheme].end(), new_scheme) != result[depth_of_scheme].end()) {
-		if (result[depth_of_scheme].find(new_scheme) != result[depth_of_scheme].end()) {
+		//if (result[depth_of_scheme].find(new_scheme) == result[depth_of_scheme].end()) {
+		/**if (result[depth_of_scheme].count(new_scheme) == 0) {
 			result[depth_of_scheme].insert(new_scheme);
-			write_result(new_scheme);
+			write_result(new_scheme); //something wrong!!!!
+			cout << " that if " << endl; 
 		}
+
+		**/
+
+		result[depth_of_scheme].insert(new_scheme); // what if change 
+
 	} 
 	else {
 		result[depth_of_scheme] = { new_scheme }; 
 		write_result(new_scheme);
+		cout << " other if! " << endl;
 	}
 }
 

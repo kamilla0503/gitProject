@@ -98,7 +98,7 @@ public:
 	bool try_pattern(string  new_pattern);
 	Scheme direct_product(Scheme scheme);
 	string full_str();
-	bool operator==(const Scheme & t2);
+	//bool operator==(const Scheme & t2);
 	void setscheme(string sname = "", NCS sncs = NCS(), int  bsamples = 0, vector <string>  bpatterns = {});
 	bool operator<(const Scheme & t2);
 
@@ -106,7 +106,7 @@ public:
 };
 
 bool operator<(const Scheme& t1, const Scheme& t2);
-bool operator==(const  Scheme& t1, const  Scheme& t2); 
+//bool operator==(const  Scheme& t1, const  Scheme& t2); 
 
 
 

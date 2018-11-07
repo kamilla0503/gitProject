@@ -505,15 +505,16 @@ void Scheme::add_pattern(string new_pattern) {
 	simplify();
 }
 
-
+/**
 bool Scheme::operator==(const Scheme& t2) {
-	return (this->name == t2.name);
+
+	return ( (this->name == t2.name)    &&  (this->patterns == t2.patterns )  && ( this->samples == t2.samples  )  );
 }
 
 bool operator==(const  Scheme& t1, const  Scheme& t2) { //*
-	return (t1.name == t2.name);
+	return ((t1.name == t2.name)  &&  (t1.patterns==t2.patterns) && ( t1.samples == t2.samples )   );
 }
-
+**/
 /**
 bool Scheme::operator<(const Scheme& t2) {
 	return (this->name < t2.name);
