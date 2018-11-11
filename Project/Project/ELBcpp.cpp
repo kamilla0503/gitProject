@@ -55,7 +55,7 @@ BlockFinder::BlockFinder( int bsamples, NCS bncs, int bmin_depth, bool bblock_fi
 
 	index_of_type_T = index_of_type(labeltype('T', 1, 1, 0));
 
-
+	//cout << " see T " << index_of_type_T << endl; 
 	if (min_t_free >= 0) {
 		check_t_free = true;
 	} 
@@ -159,6 +159,7 @@ void BlockFinder::maincycle() {
 	int start_point;
 	int patterns_left; 
 	bool flag_t_free;
+	int w = 0;
 	while (true) {
 		//cout << "cycle started and schame samples = " << scheme.samples << endl; 
 		patternscurrent = patterns[depth];
@@ -180,21 +181,23 @@ void BlockFinder::maincycle() {
 		}
 		**/
 
-
+		w = w + 1; 
 		back_up_schemes.push_back(scheme);
 		//cout << "sceme is apeended " << scheme.samples <<""   << scheme.name <<endl; 
 		scheme.add_pattern(patternscurrent[counter[depth]]);
 		//cout << "check cs for first save " << scheme.patterns.size() << " " << min_depth << endl; 
 		if (patterns_left < (min_depth - depth - 1)   ) {
 			go_back();
+			//w = w + 1;
 			continue;
 		}
 		if (patterns_left == 0) {
 			if (scheme.patterns.size() >= min_depth) {
-				cout << "save or not " << endl;
+				//cout << "save or not " << endl;
 				save_result();
 			}
 			go_back();
+			//w = w + 1;
 			continue;
 		}
 
@@ -205,19 +208,15 @@ void BlockFinder::maincycle() {
 			flag_t_free = check_have_enought_t_free(scheme, next_patterns);
 		}
 
-		
-
-
-
-
-
-		if ( next_patterns.size()!=0 && flag_t_free){
+		if ( next_patterns.size() != 0 && flag_t_free){
+			w = w + 1;
 			go_deeper(next_patterns);
+			
 
 		}
 		else {
 			if (scheme.patterns.size() >= min_depth) {
-				cout << "save or not  2" << endl;
+				//cout << "save or not  2" << endl;
 				save_result();
 			}
 			go_parallel();
@@ -225,9 +224,17 @@ void BlockFinder::maincycle() {
 
 		}
 		check_max_depth();
+
+
+		if (w % 10000 == 0) {
+			cout << " 10000 iterations " << w << endl;
+		}
+
+
+
 	}
 
-
+	cout << " we went deeper " << w << endl;
 
 }
 
@@ -248,12 +255,17 @@ void BlockFinder::check_max_depth() {
 } 
 
 vector <string> BlockFinder::get_next_patterns(vector <string> patterns, int patterns_left, int  start_point) {
-	vector <string> next_patterns = {};
+	vector <string> next_patterns ;
 	for (int i = 0; i < patterns_left; i++)  {
 		if( scheme.try_pattern(patterns[i + start_point])) {
 			next_patterns.push_back(patterns[i + start_point]);
 		}
 	}
+	/**for (int i = 0; i < next_patterns.size(); i++) {
+		cout << next_patterns[i] << " " << endl;
+	}**/
+	//cout << endl;
+
 	return next_patterns;
 }
 
@@ -295,30 +307,40 @@ void BlockFinder::save_result() {
 
 		return; 
 	}
-	int depth_of_scheme = scheme.patterns.size(); 
-	Scheme new_scheme = scheme;
+	int depth_of_scheme;
+	depth_of_scheme= scheme.patterns.size();
+	Scheme new_scheme;
+	new_scheme = scheme;
 	new_scheme.sort();
+	/**for (int i = 0; i < new_scheme.patterns.size(); i++) {
+		cout << new_scheme.patterns[i] << " ";
+
+	}**/
+	//cout << endl;
 	// << "check conditions " << (result.find(depth_of_scheme) != result.end()) << depth_of_scheme << endl;
 	
 	if(	result.find(depth_of_scheme) != result.end() ){ //casd 
-		cout << " conditions are ok  " << endl; 
+		//cout << " conditions are ok  " << endl; 
+
+		//cout << " is there new_scheme in set ?" << (result[depth_of_scheme].count(new_scheme)) << endl;
 		//if (find(result[depth_of_scheme].begin(), result[depth_of_scheme].end(), new_scheme) != result[depth_of_scheme].end()) {
-		//if (result[depth_of_scheme].find(new_scheme) == result[depth_of_scheme].end()) {
-		/**if (result[depth_of_scheme].count(new_scheme) == 0) {
+		if (result[depth_of_scheme].find(new_scheme) == result[depth_of_scheme].end()) {
+		//if (result[depth_of_scheme].count(new_scheme) == 0) {
 			result[depth_of_scheme].insert(new_scheme);
 			write_result(new_scheme); //something wrong!!!!
-			cout << " that if " << endl; 
+			//cout << " that if " << endl; 
 		}
 
-		**/
-
-		result[depth_of_scheme].insert(new_scheme); // what if change 
-
+		
+		//result[depth_of_scheme].insert(scheme);
+		//result[depth_of_scheme].insert(new_scheme); // what if change 
+		//write_result(new_scheme); 
+		
 	} 
 	else {
 		result[depth_of_scheme] = { new_scheme }; 
 		write_result(new_scheme);
-		cout << " other if! " << endl;
+		//cout << " other if! " << endl;
 	}
 }
 
@@ -334,7 +356,7 @@ bool BlockFinder::check_have_enought_t_free(Scheme scheme, vector<string>  patte
 	t2 = count_type_in_list_of_patterns(patterns_left, labeltype('T', 1, 1, 0));
 	int left_t = get<0>(t2);
 	int left_t_free = get<1>(t2);
-
+	//cout << "check_have_enought_t_free " << (scheme_t_free + left_t_free >= min_t_free) << endl; 
 	return (scheme_t_free + left_t_free >= min_t_free); 
 }
 
@@ -372,9 +394,10 @@ tuple<int, int > count_type_in_list_of_simplified(map <string, int> simplified, 
 
 tuple<int, int > count_type_in_list_of_patterns(vector<string> patterns, labeltype label_type) {
 
-
+	//cout << "T or what " << label_type.name << endl; 
 	map <string, int>  simplified = simplify_list_of_patterns(patterns);
 	int index_of_t = index_of_type(label_type);
+	//cout << "count_type_in_list_of_patterns " << get<0>(count_type_in_list_of_simplified(simplified, index_of_t)) << " " << get<1>(count_type_in_list_of_simplified(simplified, index_of_t)) << endl; 
 	return count_type_in_list_of_simplified(simplified, index_of_t);
 
 

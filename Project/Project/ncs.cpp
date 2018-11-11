@@ -26,11 +26,11 @@ bool operator<(const labeltype& t1, const labeltype& t2) {
 
 
 bool operator<(const Scheme& t1, const Scheme& t2) {
-	return (t1.name < t2.name);
+	return (t1.simplified < t2.simplified);
 }
 
 bool Scheme::operator<(const Scheme& t2) {
-	return (this->name < t2.name);
+	return (this->simplified < t2.simplified);
 }
 
 
@@ -38,6 +38,13 @@ bool Scheme::operator<(const Scheme& t2) {
 bool operator==(const labeltype& t1, const string& s2) {
 	return (t1.name == s2);
 }
+
+bool operator==(const Scheme& t1, const Scheme& s2) {
+	return (t1.simplified == s2.simplified);
+}
+
+
+
 
 bool operator==(const string& s1, const labeltype& t2) {
 	return (s1 == t2.name);
@@ -201,7 +208,7 @@ class constants {
 			}
 		}
 		//map <labeltype, string> subdict;
-		cout << "creating map" << endl; 
+		//cout << "creating map" << endl; 
 		for (int i = 0; i < label_types.size(); i++) {
 			labeltype  label_1 = label_types[i];
 			map <labeltype, string> subdict;
@@ -295,7 +302,8 @@ bool Scheme::check_codes() {
 				first = false; 
 				continue;
 			}
-			else if (find(codes.begin(), codes.end(), code) != codes.end()) {
+			//else if (find(codes.begin(), codes.end(), code) != codes.end()) { //?=
+			else if (codes.find(code) != codes.end()) {
 				return false;
 			}
 			else {
@@ -305,7 +313,7 @@ bool Scheme::check_codes() {
 	}
 	return true;
 }
-
+/**
 Scheme& Scheme::operator=(Scheme& other) {
 	if (this != &other) {  //?
 		name = other.name;
@@ -318,7 +326,7 @@ Scheme& Scheme::operator=(Scheme& other) {
 		good = other.good;
 	}
 	return *this;
-}
+}**/
 
 void Scheme::setscheme(string sname , NCS sncs , int  bsamples , vector <string>  bpatterns) {
 	name = sname;
@@ -429,7 +437,7 @@ string simplify_pattern2(string pattern) { // instead TYPES
 
 
 void Scheme::simplify() {
-	map <pattern_type, int> simplified;
+	//map <pattern_type, int> simplified;
 	string simple_pattern;
 	for (string pattern : patterns) {
 		simple_pattern = simplify_pattern(pattern);
@@ -522,7 +530,7 @@ bool Scheme::operator<(const Scheme& t2) {
 
 
 
-
+/**
 bool pattern_bigger( string pattern1, string  pattern2) {
 	char type1, type2;
 	//const vector  <char> TYPES = { char("X"), char("N"), char("C", "D", "A", "T", "S", "F" };
@@ -542,6 +550,35 @@ bool pattern_bigger( string pattern1, string  pattern2) {
 	}
 	return true;
 }
+**/
+bool pattern_bigger(string pattern1, string  pattern2) {
+	char type1, type2;
+	//const vector  <char> TYPES = { char("X"), char("N"), char("C", "D", "A", "T", "S", "F" };
+	//constants consts(); 
+	static map<char, int>  TYPES = { {'X',0}, {'N',1}, {'C',2}, {'D', 3}, {'A',4}, {'T',5}, {'S', 6}, {'F', 7} };
+	for (int i = 0; i < pattern1.size(); i++) {
+		type1 = pattern1[i];
+		type2 = pattern2[i];
+		//!
+		if (TYPES[type1] > TYPES[type2]) {
+			return true;
+		}
+		else if (TYPES[type1] < TYPES[type2]) {
+			return false;
+		}
+		else continue;
+	}
+	return true;
+}
+
+
+
+
+
+
+
+
+
 
 
 bool Scheme::try_pattern(string  new_pattern) {
@@ -557,7 +594,9 @@ bool Scheme::try_pattern(string  new_pattern) {
 
 		code_1 = ncs.calc_code(pattern, new_pattern);
 		code_2 =ncs.calc_code(new_pattern, pattern);
-		if ( (find(codes.begin(), codes.end(), code_1) != codes.end() )|| (find(codes.begin(), codes.end(), code_2) != codes.end()) || code_1 == code_2 || (find(new_codes.begin(), new_codes.end(), code_2) != new_codes.end())|| (find(new_codes.begin(), new_codes.end(), code_1) != new_codes.end())) {
+		//if ( (find(codes.begin(), codes.end(), code_1) != codes.end() )|| (find(codes.begin(), codes.end(), code_2) != codes.end()) || code_1 == code_2 || (find(new_codes.begin(), new_codes.end(), code_2) != new_codes.end())|| (find(new_codes.begin(), new_codes.end(), code_1) != new_codes.end())) {
+		if ( codes.find(code_1)!=codes.end() || codes.find(code_2) != codes.end()   ||     (code_2==code_1) || new_codes.find(code_1) != new_codes.end() || new_codes.find(code_2) != new_codes.end()){
+			
 			return false; 
 		}
 		else {
@@ -567,7 +606,7 @@ bool Scheme::try_pattern(string  new_pattern) {
 
 	}
 	string self_code = ncs.calc_code(new_pattern, new_pattern);
-	if ((find(codes.begin(), codes.end(), self_code) != codes.end()) || (find(new_codes.begin(), new_codes.end(), self_code) != new_codes.end())) {
+	if (codes.find(self_code) != codes.end() || new_codes.find(self_code) != new_codes.end()) {
 		return false;
 
 	}

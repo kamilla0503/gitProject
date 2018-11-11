@@ -39,6 +39,10 @@ public:
 bool operator<(const labeltype& t1, const labeltype& t2);
 bool operator==(const labeltype& t1, const string& s2);
 bool operator==(const string& s1, const labeltype& t2);
+
+
+
+
 class spectrum {
 public:
 	string name;
@@ -87,7 +91,7 @@ public:
 	map <string, int> simplified;
 	bool good;
 	Scheme(string sname="", NCS sncs= NCS(), int  bsamples=0, vector <string>  bpatterns = {}); //patterns
-	Scheme& operator=(Scheme& other);
+	//Scheme& operator=(Scheme& other);
 	//Scheme& operator=(const Scheme& other);
 	bool check_codes();
 	void simplify();
@@ -104,7 +108,7 @@ public:
 
 
 };
-
+bool operator==(const Scheme& s1, const Scheme& t2);
 bool operator<(const Scheme& t1, const Scheme& t2);
 //bool operator==(const  Scheme& t1, const  Scheme& t2); 
 
