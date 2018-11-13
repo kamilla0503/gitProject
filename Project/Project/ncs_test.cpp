@@ -110,7 +110,7 @@ int main(int argc, char **argv)
 
 	getchar();
 	int samp =5; 
-	BlockFinder b(samp, test_nc2,5, false,-1  );
+	BlockFinder b(samp, test_nc2, 5, true, -1);
 	cout << " test creating bf and s " << b.scheme.samples << endl;
 	cout << "!!!" << endl; 
 	//cout << b.patterns[0][0] << endl;
@@ -126,6 +126,10 @@ int main(int argc, char **argv)
 
 
 	getchar();
+
+	fstream blocks_file;
+	string block_filename = "NC2_5_5_cpp.elb";
+	blocks_file.open(block_filename, fstream::out);
 	clock_t start = clock();
 
 	b.find_schemes(); 
@@ -134,9 +138,12 @@ int main(int argc, char **argv)
 	double seconds = (double)(end - start) / CLOCKS_PER_SEC;
 	cout << b.results_found << " found " << endl; 
 	cout << b.result.size() << " size of results" << endl;
-	cout << b.output << endl;
 	cout << b.out1 << endl;
+	blocks_file << b.result_string;
+        blocks_file.close();
+	cout << "Blocks found (" << b.results_found << ") are written to file " << block_filename << endl;
 	printf("The time: %f seconds\n", seconds); 
+
 	getchar();
 	return 0;
 }

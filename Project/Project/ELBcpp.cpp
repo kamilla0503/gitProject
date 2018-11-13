@@ -70,7 +70,9 @@ BlockFinder::BlockFinder( int bsamples, NCS bncs, int bmin_depth, bool bblock_fi
 	results_found = 0; 
 	max_depth = 0;
 	iterator = 0;
-	output = "";
+	result_string = "[NCS = " + ncs.name + "]\n"+
+	                "[Deuterated = " + (ncs.deuterated?"True":"False") + "]\n";
+	
 	out1 = "";
 	//map <int, set< Scheme>> result;
 	
@@ -405,7 +407,7 @@ tuple<int, int > count_type_in_list_of_patterns(vector<string> patterns, labelty
 
 void  BlockFinder::write_result(Scheme  new_scheme) {
 	results_found = results_found + 1;
-	output = new_scheme.full_str();
+	result_string += new_scheme.full_str();
 	//cout << new_scheme.samples << "samples from new_scheme " << endl; 
 
 }

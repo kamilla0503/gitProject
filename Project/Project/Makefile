@@ -2,8 +2,8 @@ CC=gcc
 CXX=g++
 RM=rm -f
 
-CPPFLAGS=-g 
-LDFLAGS=-g 
+CPPFLAGS=-O3 
+LDFLAGS=-O3
 LDLIBS=
 
 SRCS=ncs.cpp ncs_test.cpp ELBcpp.cpp
