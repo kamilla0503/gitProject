@@ -41,8 +41,9 @@ void ELB::sort() {
 } 
 
 
-BlockFinder::BlockFinder( int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode, int bmin_t_free )
-{	samples = bsamples;
+BlockFinder::BlockFinder( int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode, int bmin_t_free)
+{	
+        samples = bsamples;
 	ncs = bncs;
 	min_depth = bmin_depth;
 	check_t_free = false; 
@@ -70,8 +71,11 @@ BlockFinder::BlockFinder( int bsamples, NCS bncs, int bmin_depth, bool bblock_fi
 	results_found = 0; 
 	max_depth = 0;
 	iterator = 0;
-	output = "";
+	result_string = "[NCS = " + ncs.name + "]\n"+
+	                "[Deuterated = " + (ncs.deuterated?"True":"False") + "]\n";
+	
 	out1 = "";
+	start_time = clock();
 	//map <int, set< Scheme>> result;
 	
 
@@ -161,6 +165,8 @@ void BlockFinder::maincycle() {
 	bool flag_t_free;
 	int w = 0;
 	while (true) {
+	        next_iteration_output();
+
 		//cout << "cycle started and schame samples = " << scheme.samples << endl; 
 		patternscurrent = patterns[depth];
 		//cout << patternscurrent[0] << " patternscurrent [ 0 ] " << endl; 
@@ -183,7 +189,7 @@ void BlockFinder::maincycle() {
 
 		w = w + 1; 
 		back_up_schemes.push_back(scheme);
-		//cout << "sceme is apeended " << scheme.samples <<""   << scheme.name <<endl; 
+		//cout << "scheme is apeended " << scheme.samples <<""   << scheme.name <<endl; 
 		scheme.add_pattern(patternscurrent[counter[depth]]);
 		//cout << "check cs for first save " << scheme.patterns.size() << " " << min_depth << endl; 
 		if (patterns_left < (min_depth - depth - 1)   ) {
@@ -224,18 +230,28 @@ void BlockFinder::maincycle() {
 
 		}
 		check_max_depth();
-
-
-		if (w % 10000 == 0) {
-			cout << " 10000 iterations " << w << endl;
-		}
-
-
-
+	
 	}
 
 	cout << " we went deeper " << w << endl;
 
+}
+
+
+void BlockFinder::next_iteration_output()
+{
+    iterator++;
+    if (iterator % 10000 == 0) {
+      ostringstream log;
+      log<< "[BlockFinder" << to_string(samples) << "]";
+      log<< setw(9) << iterator;
+      time_t now = clock();
+      double time_in_run = (double)(now - start_time) / CLOCKS_PER_SEC;
+      //out += to_string
+      log << setw(8) << setprecision(2) << fixed << time_in_run << " sec";
+      log << " max_P=" << setw(2) << setiosflags(ios::left) << max_depth + 1;
+      cout << log.str() << endl;
+    }
 }
 
 void BlockFinder::go_parallel() {
@@ -405,7 +421,7 @@ tuple<int, int > count_type_in_list_of_patterns(vector<string> patterns, labelty
 
 void  BlockFinder::write_result(Scheme  new_scheme) {
 	results_found = results_found + 1;
-	output = new_scheme.full_str();
+	result_string += new_scheme.full_str();
 	//cout << new_scheme.samples << "samples from new_scheme " << endl; 
 
 }

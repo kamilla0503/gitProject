@@ -5,10 +5,13 @@
 #include<vector>
 #include<map>
 #include<set>
-#include <fstream>
+#include<fstream>
+#include<sstream>
 #include<iostream>
+#include<iomanip>
 #include<regex>
 #include<tuple>
+#include<time.h> 
 
 
 
@@ -133,6 +136,8 @@ public:
 
 class BlockFinder {
 public: 
+	BlockFinder(int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode, int bmin_t_free);
+
 	vector<labeltype> types;
 	int samples;
 	NCS ncs;
@@ -147,7 +152,7 @@ public:
 	int depth;
 	int max_depth;
 	bool check_t_free;
-	string output; 
+	string result_string; 
 	int  min_t_free = -1; 
 	vector <int> counter = {}; //temporary
 	vector <Scheme> back_up_schemes = {};
@@ -157,11 +162,12 @@ public:
 	int iterator; 
 	int index_of_type_T;
 	string out1 ;
+	time_t start_time;
 	//BlockFinder( NCS bncs, int bmin_depth, bool bblock_finder_mode, int  bmin_t_free = -1);
-	BlockFinder(int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode, int bmin_t_free);
 	vector <string> generate_patterns(int  samples, bool top = true );
 	void start_blockfinder();
 	void maincycle();
+	void next_iteration_output();
 	void go_back();
 	void save_result();
 	bool check_have_enought_t_free(Scheme scheme, vector<string>  patterns_left);

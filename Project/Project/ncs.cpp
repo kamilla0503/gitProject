@@ -636,12 +636,12 @@ string Scheme::full_str() {
 	string all_p = "";
 
 	for (string i : patterns) {
-		all_p = all_p + i + " \n";
+		all_p = all_p + i + "\n";
 
 
 	}
 
-	s ="[ELB samples = " + to_string(samples) + " patterns = " + to_string(patterns.size()) + " \n"+ all_p;
+	s ="[ELB samples = " + to_string(samples) + " patterns = " + to_string(patterns.size()) + "]\n"+ all_p;
 
 	return s; 
 }
