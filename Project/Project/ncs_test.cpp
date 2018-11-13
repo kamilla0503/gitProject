@@ -2,7 +2,7 @@
 #include<string>
 #include<vector>
 #include<map>
-#include <time.h> 
+#include<time.h> 
 #include<iomanip>
 #include<iostream>
 //
@@ -109,8 +109,9 @@ int main(int argc, char **argv)
 
 
 	getchar();
-	int samp =5; 
-	BlockFinder b(samp, test_nc2, 5, true, -1);
+	int samp = 6; 
+	int minp = 7;
+	BlockFinder b(samp, test_nc2, minp, true, -1);
 	cout << " test creating bf and s " << b.scheme.samples << endl;
 	cout << "!!!" << endl; 
 	//cout << b.patterns[0][0] << endl;
@@ -128,7 +129,7 @@ int main(int argc, char **argv)
 	getchar();
 
 	fstream blocks_file;
-	string block_filename = "NC2_5_5_cpp.elb";
+	string block_filename = "NC2_" + to_string(samp) + "_" + to_string(minp) + "_cpp.elb";
 	blocks_file.open(block_filename, fstream::out);
 	clock_t start = clock();
 
