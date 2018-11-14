@@ -154,7 +154,7 @@ void BlockFinder::start_blockfinder() {
 		out1 = "started samples =" + to_string(samples) + " min depth = " + to_string(min_depth);
 		cout << "started samples =" << samples << " min depth = " << min_depth << endl;
 	}
-
+	cout << " total number of patterns is  " << patterns[0].size() << endl; 
 }
 
 
@@ -307,7 +307,14 @@ void BlockFinder::find_schemes() {
 
 void BlockFinder:: blockfinder_finished() {
 	out1 = "[BlockFinder] finished search in" + to_string(samples) + "samples after " + to_string(iterator) + " iterations " + to_string(results_found) + " ELB schemes found";
+	/**for (auto c : result) {
+		for ( auto i: c.second ) {
+			cout << i.samples << " " << endl; 
 
+
+
+		}
+	}**/
 }
 
 void BlockFinder::go_back() {
