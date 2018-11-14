@@ -437,12 +437,14 @@ string simplify_pattern2(string pattern) { // instead TYPES
 
 
 void Scheme::simplify() {
-	//map <pattern_type, int> simplified;
+	//map <string, int> simplified; //new
+	//map <pattern_type, int> simplified = {};
 	string simple_pattern;
+	simplified = {};
 	for (string pattern : patterns) {
-		simple_pattern = simplify_pattern(pattern);
+		simple_pattern = simplify_pattern2(pattern);
 		//if (( simplified.empty != true ) && (simplified.count(simple_pattern) > 0)) {
-		if ((simplified.size()==0) && (simplified.find(simple_pattern) != simplified.end())) {
+		if ((simplified.size()!=0) && (simplified.find(simple_pattern) != simplified.end())) {
 			simplified[simple_pattern] = simplified[simple_pattern] + 1;
 		}
 		else {
@@ -460,7 +462,7 @@ Scheme::Scheme(string sname, NCS sncs, int  bsamples, vector <string>  bpatterns
 	ncs = sncs; 
 	set <string> codes; //
 	good = check_codes();
-	map <string, int> simplified;//
+	//map <string, int> simplified;//new comment 
 	simplify();
 	set <string> new_codes;
 	//+?

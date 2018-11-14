@@ -1,0 +1,12 @@
+[NCS = NC2]
+[Deuterated = False]
+[ELB samples = 4 patterns = 4]
+NNNC
+NNCN
+NCNN
+CNNN
+[ELB samples = 4 patterns = 4]
+NNCC
+NCNC
+CNCN
+CCNN
