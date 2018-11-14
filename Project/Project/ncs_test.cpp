@@ -109,8 +109,8 @@ int main(int argc, char **argv)
 
 
 	getchar();
-	int samp =5; 
-	BlockFinder b(samp, test_nc2,5, false,-1  );
+	int samp =4; 
+	BlockFinder b(samp, test_nc2,4, false,-1  );
 	cout << " test creating bf and s " << b.scheme.samples << endl;
 	cout << "!!!" << endl; 
 	//cout << b.patterns[0][0] << endl;
