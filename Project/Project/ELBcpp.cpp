@@ -250,6 +250,11 @@ void BlockFinder::next_iteration_output()
       //out += to_string
       log << setw(8) << setprecision(2) << fixed << time_in_run << " sec";
       log << " max_P=" << setw(2) << setiosflags(ios::left) << max_depth + 1;
+      log << " ELB_found= " << setw(6) << results_found;
+      for(int d=0; d< depth && d<10; d++){
+	log << " " << setw(3) << setiosflags(ios::right) << counter[d] << "/";
+	log        << setw(3) << setiosflags(ios::left) << patterns[d].size() - min_depth + 1 + d;
+      }
       cout << log.str() << endl;
     }
 }
@@ -428,6 +433,7 @@ tuple<int, int > count_type_in_list_of_patterns(vector<string> patterns, labelty
 
 void  BlockFinder::write_result(Scheme  new_scheme) {
 	results_found = results_found + 1;
+        result_string += "# iterator = " + to_string(iterator) + "\n";
 	result_string += new_scheme.full_str();
 	//cout << new_scheme.samples << "samples from new_scheme " << endl; 
 

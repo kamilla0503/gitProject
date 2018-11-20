@@ -19,13 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ELBcpp.cpp" />
+    <ClCompile Include="blockfinder.cpp" />
+    <ClCompile Include="labeltype.cpp" />
     <ClCompile Include="ncs.cpp" />
+    <ClCompile Include="ncs2.cpp" />
     <ClCompile Include="ncs_test.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="patterns.cpp" />
+    <ClCompile Include="Scheme.cpp" />
+    <ClCompile Include="spectrum.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="blockfinder.h" />
+    <ClInclude Include="labeltype.h" />
     <ClInclude Include="ncs.h" />
+    <ClInclude Include="Scheme.h" />
+    <ClInclude Include="Spectrum.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
