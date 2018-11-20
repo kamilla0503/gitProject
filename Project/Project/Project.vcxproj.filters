@@ -39,6 +39,9 @@
     <ClCompile Include="ncs2.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="ELBcpp.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ncs.h">
@@ -56,5 +59,10 @@
     <ClInclude Include="blockfinder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile">
+      <Filter>Исходные файлы</Filter>
+    </None>
   </ItemGroup>
 </Project>

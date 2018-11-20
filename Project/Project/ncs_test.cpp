@@ -1,14 +1,12 @@
-/**#include"ncs.h"
+#include"ncs.h"
 #include<string>
 #include<vector>
 #include<map>
 #include<time.h> 
 #include<iomanip>
-#include<iostream>**/
+#include<iostream>
 //
-//using namespace std; 
-
-#include"blockfinder.h"
+using namespace std; 
 
 int main(int argc, char **argv)
 {
@@ -24,6 +22,9 @@ int main(int argc, char **argv)
 	//nc2_spectra.push_back(spectrum("COfHNCA"));
 	//nc2_spectra.push_back(spectrum("HNCACO"));
 	//nc2_spectra.push_back(spectrum("HNCAfCO"));
+
+
+
 
 
 	nc2_labeltype.push_back(labeltype('X', 0, 0, 0));
@@ -94,9 +95,9 @@ int main(int argc, char **argv)
 	cout << "code=" << code << endl;
 
 
-	string r1 = simplify_pattern(s1);
+	string r1 = simplify_pattern2(s1);
 
-	string r2 = simplify_pattern(s2);
+	string r2 = simplify_pattern2(s2);
 	cout << "Sp " << r1 << endl; 
 	cout << "Sp " <<  r2 << endl;
 

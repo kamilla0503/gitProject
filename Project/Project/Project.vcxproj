@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="blockfinder.cpp" />
+    <ClCompile Include="ELBcpp.cpp" />
     <ClCompile Include="labeltype.cpp" />
     <ClCompile Include="ncs.cpp" />
     <ClCompile Include="ncs2.cpp" />
@@ -34,6 +35,9 @@
     <ClInclude Include="ncs.h" />
     <ClInclude Include="Scheme.h" />
     <ClInclude Include="Spectrum.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
