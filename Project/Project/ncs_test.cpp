@@ -5,6 +5,7 @@
 #include<time.h> 
 #include<iomanip>
 #include<iostream>
+#include"blockfinder.h"
 //
 using namespace std; 
 
@@ -95,9 +96,9 @@ int main(int argc, char **argv)
 	cout << "code=" << code << endl;
 
 
-	string r1 = simplify_pattern2(s1);
+	string r1 = simplify_pattern(s1);
 
-	string r2 = simplify_pattern2(s2);
+	string r2 = simplify_pattern(s2);
 	cout << "Sp " << r1 << endl; 
 	cout << "Sp " <<  r2 << endl;
 
@@ -109,8 +110,8 @@ int main(int argc, char **argv)
 
 
 	getchar();
-	int samp = 6; 
-	int minp = 7;
+	int samp = 5; 
+	int minp = 5;
 	BlockFinder b(samp, test_nc2, minp, true, -1);
 	cout << " test creating bf and s " << b.scheme.samples << endl;
 	cout << "!!!" << endl; 

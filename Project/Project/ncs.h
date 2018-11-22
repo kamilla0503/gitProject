@@ -83,103 +83,9 @@ public:
 
 
 
-class Scheme {
-public:
-	string name;
-	NCS ncs;
-	int samples;
-	vector <string> patterns;
-	set <string> codes; 
-	set <string> new_codes;
-	map <string, int> simplified;
-	bool good;
-	Scheme(string sname="", NCS sncs= NCS(), int  bsamples=0, vector <string>  bpatterns = {}); //patterns
-	//Scheme& operator=(Scheme& other);
-	//Scheme& operator=(const Scheme& other);
-	bool check_codes();
-	void simplify();
-	bool check_patterns(vector <string> patterns);
-	void sort();
-	void add_new_codes(string new_pattern);
-	void add_pattern(string new_pattern); 
-	bool try_pattern(string  new_pattern);
-	Scheme direct_product(Scheme scheme);
-	string full_str();
-	//bool operator==(const Scheme & t2);
-	void setscheme(string sname = "", NCS sncs = NCS(), int  bsamples = 0, vector <string>  bpatterns = {});
-	bool operator<(const Scheme & t2);
-
-
-};
-bool operator==(const Scheme& s1, const Scheme& t2);
-bool operator<(const Scheme& t1, const Scheme& t2);
 //bool operator==(const  Scheme& t1, const  Scheme& t2); 
 
 
-
-
-class ELB {
-public: 
-	vector <string> patterns;
-	string ncs_name; 
-	bool deuterated;
-	map <string, int> simplified;
-	void simplify();
-	ELB(vector <string> bpatterns, string bncs_name, bool bdeuterated = false);
-
-	bool eq(Scheme scheme); 
-	void sort();
-	//bool is_subset_of(map <string, int>);
-
-};
-
-
-class BlockFinder {
-public: 
-	BlockFinder(int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode, int bmin_t_free);
-
-	vector<labeltype> types;
-	int samples;
-	NCS ncs;
-	int min_depth; 
-	Scheme scheme;
-
-	//Scheme scheme("1", ncs, samples, {});
-
-	//vector <string> patterns; //temporary 
-	//new?
-	 vector <vector <string>> patterns;
-	int depth;
-	int max_depth;
-	bool check_t_free;
-	string result_string; 
-	int  min_t_free = -1; 
-	vector <int> counter = {}; //temporary
-	vector <Scheme> back_up_schemes = {};
-	bool  block_finder_mode; 
-	int results_found; 
-	map <int, set< Scheme>> result;//soe
-	int iterator; 
-	int index_of_type_T;
-	string out1 ;
-	time_t start_time;
-	//BlockFinder( NCS bncs, int bmin_depth, bool bblock_finder_mode, int  bmin_t_free = -1);
-	vector <string> generate_patterns(int  samples, bool top = true );
-	void start_blockfinder();
-	void maincycle();
-	void next_iteration_output();
-	void go_back();
-	void save_result();
-	bool check_have_enought_t_free(Scheme scheme, vector<string>  patterns_left);
-	void  write_result(Scheme  new_scheme); 
-	vector <string> get_next_patterns(vector <string> patterns, int patterns_left, int  start_point); 
-	void go_deeper(vector <string> next_patterns);
-	void go_parallel();
-	void check_max_depth();
-	void find_schemes();
-	void blockfinder_finished();
-		//bfm? 
-};
 
 
 
@@ -200,7 +106,6 @@ public:
 //for scheme (patterns) 
 bool pattern_bigger(string pattern1, string  pattern2);
 string simplify_pattern(string pattern);
-string simplify_pattern2(string pattern);
 map <string, int>  simplify_list_of_patterns(vector<string> list_of_patterns); 
 tuple<int, int > count_type_in_list_of_simplified(map <string, int> simplified, int index_of_type); 
 int index_of_type(labeltype label_type);

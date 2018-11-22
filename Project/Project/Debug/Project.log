@@ -1,61 +1,15 @@
-﻿  blockfinder.cpp
-c:\users\kamilla\desktop\gitproject\project\project\blockfinder.cpp(103): warning C4018: >: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\blockfinder.cpp(116): warning C4018: >=: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\blockfinder.cpp(135): warning C4018: >=: несоответствие типов со знаком и без знака
-  labeltype.cpp
-  ncs.cpp
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(17): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(19): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(26): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(29): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(50): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(66): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(69): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(105): warning C4018: <: несоответствие типов со знаком и без знака
-  ncs2.cpp
-  ncs_test.cpp
-c:\users\kamilla\desktop\gitproject\project\project\ncs_test.cpp(67): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs_test.cpp(118): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs_test.cpp(119): warning C4018: <: несоответствие типов со знаком и без знака
-  patterns.cpp
-c:\users\kamilla\desktop\gitproject\project\project\patterns.cpp(9): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\patterns.cpp(26): warning C4018: <: несоответствие типов со знаком и без знака
-  Scheme.cpp
-c:\users\kamilla\desktop\gitproject\project\project\scheme.cpp(74): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\scheme.cpp(75): warning C4018: <: несоответствие типов со знаком и без знака
-c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.14.26428\include\xutility(3579): error C2678: бинарный "==": не найден оператор, принимающий левый операнд типа "labeltype" (или приемлемое преобразование отсутствует)
-  c:\users\kamilla\desktop\gitproject\project\project\labeltype.h(11): note: может быть "bool labeltype::operator ==(const labeltype &)"
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.14.26428\include\system_error(284): note: или       "bool std::operator ==(const std::error_condition &,const std::error_condition &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.14.26428\include\system_error(278): note: или       "bool std::operator ==(const std::error_condition &,const std::error_code &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.14.26428\include\system_error(272): note: или       "bool std::operator ==(const std::error_code &,const std::error_condition &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.14.26428\include\system_error(266): note: или       "bool std::operator ==(const std::error_code &,const std::error_code &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.14.26428\include\exception(330): note: или       "bool std::operator ==(const std::exception_ptr &,std::nullptr_t) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.14.26428\include\exception(325): note: или       "bool std::operator ==(std::nullptr_t,const std::exception_ptr &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.14.26428\include\exception(320): note: или       "bool std::operator ==(const std::exception_ptr &,const std::exception_ptr &) noexcept"
-  c:\users\kamilla\desktop\gitproject\project\project\labeltype.h(14): note: или       "bool operator ==(const labeltype &,const char &)" [найдено при поиске с зависимостью от аргументов]
-  c:\users\kamilla\desktop\gitproject\project\project\labeltype.h(15): note: или       "bool operator ==(const char &,const labeltype &)" [найдено при поиске с зависимостью от аргументов]
-  c:\users\kamilla\desktop\gitproject\project\project\scheme.cpp(11): note: или       "bool operator ==(const Scheme &,const Scheme &)" [найдено при поиске с зависимостью от аргументов]
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.14.26428\include\xutility(3579): note: при попытке сопоставить список аргументов "(labeltype, const std::string)"
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.14.26428\include\xutility(3592): note: выполняется компиляция ссылки на экземпляр шаблон функции "_InIt std::_Find_unchecked1<_InIt,_Ty>(_InIt,const _InIt,const _Ty &,std::false_type)"
-          with
-          [
-              _InIt=labeltype *,
-              _Ty=std::string
-          ]
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.14.26428\include\xutility(3601): note: выполняется компиляция ссылки на экземпляр шаблон функции "_InIt std::_Find_unchecked<labeltype*,_Ty>(const _InIt,const _InIt,const _Ty &)"
-          with
-          [
-              _InIt=labeltype *,
-              _Ty=std::string
-          ]
-  c:\users\kamilla\desktop\gitproject\project\project\scheme.cpp(61): note: выполняется компиляция ссылки на экземпляр шаблон функции "_InIt std::find<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,std::string>(_InIt,const _InIt,const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &)"
-          with
-          [
-              _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<labeltype>>>,
-              _Ty=labeltype
-          ]
-  spectrum.cpp
-  Создание кода...
-c:\users\kamilla\desktop\gitproject\project\project\spectrum.cpp(40): warning C4715: spectrum::has_signal: значение возвращается не при всех путях выполнения
-c:\users\kamilla\desktop\gitproject\project\project\ncs2.cpp(28): warning C4717: operator==: рекурсия на всех путях выполнения, функция вызовет переполнение стека
-c:\users\kamilla\desktop\gitproject\project\project\ncs2.cpp(32): warning C4717: operator==: рекурсия на всех путях выполнения, функция вызовет переполнение стека
+﻿  ncs.cpp
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(76): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(78): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(85): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(88): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(110): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(124): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(127): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(166): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(178): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(193): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(20): warning C4717: operator==: рекурсия на всех путях выполнения, функция вызовет переполнение стека
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(24): warning C4717: operator==: рекурсия на всех путях выполнения, функция вызовет переполнение стека
+c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(60): warning C4715: spectrum::has_signal: значение возвращается не при всех путях выполнения
+  Project.vcxproj -> C:\Users\Kamilla\Desktop\gitProject\Project\Debug\Project.exe
