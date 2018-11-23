@@ -2,20 +2,20 @@ CC=gcc
 CXX=g++
 RM=rm -f
 
-CPPFLAGS=-g -std=c++11 
-LDFLAGS=-g -std=c++11
+CPPFLAGS=-O3 -std=c++11 
+LDFLAGS=-O3 -std=c++11
 LDLIBS=
 
-SRCS=ncs.cpp ncs_test.cpp ELBcpp.cpp
+SRCS=ncs.cpp scheme.cpp blockfinder.cpp ncs_test.cpp
 OBJS=$(subst .cpp,.o,$(SRCS))
-
 all: test_ncs
 
-ncs.o: ncs.cpp ncs.h
 
-ncs_test.o: ncs_test.cpp ncs.h
+ncs.o: ncs.cpp ncs.h 
+scheme.o: scheme.cpp scheme.h 
+blockfinder.o: blockfinder.cpp blockfinder.h 
 
-ELBcp.o: ELBcpp.cpp ncs.h
+ncs_test.o: ncs_test.cpp ncs.h scheme.h blockfinder.h
 
 test_ncs: $(OBJS)
 	$(CXX) $(LDFLAGS) -o test_ncs $(OBJS) $(LDLIBS)

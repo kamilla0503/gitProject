@@ -110,8 +110,8 @@ int main(int argc, char **argv)
 
 
 	getchar();
-	int samp = 5; 
-	int minp = 5;
+	int samp = 6; 
+	int minp = 7;
 	BlockFinder b(samp, test_nc2, minp, true, -1);
 	cout << " test creating bf and s " << b.scheme.samples << endl;
 	cout << "!!!" << endl; 

@@ -36,15 +36,15 @@ public:
 	vector <string> generate_patterns(int  samples, bool top = true);
 	void start_blockfinder();
 	void maincycle();
-	void next_iteration_output();
-	void go_back();
-	void save_result();
-	bool check_have_enought_t_free(Scheme scheme, vector<string>  patterns_left);
-	void  write_result(Scheme  new_scheme);
-	vector <string> get_next_patterns(vector <string> patterns, int patterns_left, int  start_point);
-	void go_deeper(vector <string> next_patterns);
-	void go_parallel();
-	void check_max_depth();
+	inline void next_iteration_output();
+	inline void go_back();
+	inline void save_result();
+	inline bool check_have_enought_t_free(Scheme scheme, vector<string>  patterns_left);
+	inline void  write_result(Scheme  new_scheme);
+	inline vector <string> get_next_patterns(vector <string> patterns, int patterns_left, int  start_point);
+	inline void go_deeper(vector <string> next_patterns);
+	inline void go_parallel();
+	inline void check_max_depth();
 	void find_schemes();
 	void blockfinder_finished();
 	//bfm? 

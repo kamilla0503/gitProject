@@ -35,7 +35,7 @@ vector <string> BlockFinder::generate_patterns(int  bsamples, bool top ) {
 	if (bsamples == 0) {
 		new_set = { "" };
 		return new_set;
-	}
+}
 	
 	current_set = generate_patterns(bsamples - 1, false);
 	new_set = { };
@@ -129,7 +129,7 @@ void BlockFinder::maincycle() {
 	}
 }
 
-void BlockFinder::next_iteration_output()
+inline void BlockFinder::next_iteration_output()
 {
     iterator++;
     if (iterator % 10000 == 0) {
@@ -149,13 +149,13 @@ void BlockFinder::next_iteration_output()
     }
 }
 
-void BlockFinder::go_parallel() {
+inline void BlockFinder::go_parallel() {
 	scheme =back_up_schemes[depth];
 	back_up_schemes.pop_back();
 	counter[depth] = counter[depth] + 1;
 }
 
-void BlockFinder::check_max_depth() {
+inline void BlockFinder::check_max_depth() {
 	if (depth > max_depth) {
 		max_depth = depth;
 		if (block_finder_mode) {
@@ -165,7 +165,7 @@ void BlockFinder::check_max_depth() {
 
 } 
 
-vector <string> BlockFinder::get_next_patterns(vector <string> patterns, int patterns_left, int  start_point) {
+inline vector <string> BlockFinder::get_next_patterns(vector <string> patterns, int patterns_left, int  start_point) {
 	vector <string> next_patterns ;
 	for (int i = 0; i < patterns_left; i++)  {
 		if( scheme.try_pattern(patterns[i + start_point])) {
@@ -175,7 +175,7 @@ vector <string> BlockFinder::get_next_patterns(vector <string> patterns, int pat
 	return next_patterns;
 }
 
-void BlockFinder::go_deeper(vector <string> next_patterns) {
+inline void BlockFinder::go_deeper(vector <string> next_patterns) {
 	patterns.push_back(next_patterns);
 	counter.push_back(0);
 	depth = depth + 1;
@@ -192,7 +192,7 @@ void BlockFinder:: blockfinder_finished() {
 	out1 = "[BlockFinder] finished search in" + to_string(samples) + "samples after " + to_string(iterator) + " iterations " + to_string(results_found) + " ELB schemes found";
 }
 
-void BlockFinder::go_back() {
+inline void BlockFinder::go_back() {
 	depth = depth -1;
 	patterns.pop_back();
 	counter.pop_back();
@@ -205,7 +205,7 @@ void BlockFinder::go_back() {
 
 }
 
-void BlockFinder::save_result() {
+inline void BlockFinder::save_result() {
 	if (check_t_free && !(check_have_enought_t_free(scheme, {}))) {
 		return; 
 	}
@@ -227,7 +227,7 @@ void BlockFinder::save_result() {
 	}
 }
 
-bool BlockFinder::check_have_enought_t_free(Scheme scheme, vector<string>  patterns_left) {
+inline bool BlockFinder::check_have_enought_t_free(Scheme scheme, vector<string>  patterns_left) {
 	tuple <int, int> t;
 	t = count_type_in_list_of_simplified(scheme.simplified, index_of_type_T); 
 	int scheme_t = get<0>(t); 
@@ -275,7 +275,7 @@ tuple<int, int > count_type_in_list_of_patterns(vector<string> patterns, labelty
 	return count_type_in_list_of_simplified(simplified, index_of_t);
 }
 
-void  BlockFinder::write_result(Scheme  new_scheme) {
+inline void  BlockFinder::write_result(Scheme  new_scheme) {
 	results_found = results_found + 1;
         result_string += "# iterator = " + to_string(iterator) + "\n";
 	result_string += new_scheme.full_str();
