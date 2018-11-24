@@ -2,8 +2,8 @@ CC=gcc
 CXX=g++
 RM=rm -f
 
-CPPFLAGS=-O3 -std=c++11 
-LDFLAGS=-O3 -std=c++11
+CPPFLAGS=-O3 -std=c++11 -pg 
+LDFLAGS=-O3 -std=c++11 -pg
 LDLIBS=
 
 SRCS=ncs.cpp scheme.cpp blockfinder.cpp ncs_test.cpp
