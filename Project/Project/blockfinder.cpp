@@ -1,6 +1,6 @@
 #include"blockfinder.h"
 
-BlockFinder::BlockFinder( int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode, int bmin_t_free){	
+BlockFinder::BlockFinder( int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode, int bmin_t_free, int bbegin, int bend ){	
 	samples = bsamples;
 	ncs = bncs;
 	min_depth = bmin_depth;
@@ -21,6 +21,8 @@ BlockFinder::BlockFinder( int bsamples, NCS bncs, int bmin_depth, bool bblock_fi
 	results_found = 0; 
 	max_depth = 0;
 	iterator = 0;
+	begin = bbegin;
+	end = bend; 
 	result_string = "[NCS = " + ncs.name + "]\n"+
 	                "[Deuterated = " + (ncs.deuterated?"True":"False") + "]\n";
 	

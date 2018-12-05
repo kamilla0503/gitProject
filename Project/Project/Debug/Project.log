@@ -1,15 +1,4 @@
-﻿  ncs.cpp
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(76): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(78): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(85): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(88): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(110): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(124): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(127): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(166): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(178): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(193): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(20): warning C4717: operator==: рекурсия на всех путях выполнения, функция вызовет переполнение стека
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(24): warning C4717: operator==: рекурсия на всех путях выполнения, функция вызовет переполнение стека
-c:\users\kamilla\desktop\gitproject\project\project\ncs.cpp(60): warning C4715: spectrum::has_signal: значение возвращается не при всех путях выполнения
+﻿  blockfinder_main.cpp
+c:\users\kamilla\desktop\gitproject\project\project\blockfinder_main.cpp(11): warning C4101: begin: неиспользованная локальная переменная
+c:\users\kamilla\desktop\gitproject\project\project\blockfinder_main.cpp(11): warning C4101: end: неиспользованная локальная переменная
   Project.vcxproj -> C:\Users\Kamilla\Desktop\gitProject\Project\Debug\Project.exe

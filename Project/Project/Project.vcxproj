@@ -23,12 +23,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="blockfinder.cpp" />
+    <ClCompile Include="blockfinder_main.cpp" />
+    <ClCompile Include="classes.cpp" />
     <ClCompile Include="ncs.cpp" />
     <ClCompile Include="ncs_test.cpp" />
     <ClCompile Include="scheme.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="blockfinder.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="ncs.h" />
     <ClInclude Include="scheme.h" />
   </ItemGroup>

@@ -1,0 +1,7 @@
+[NCS = NC2]
+[Deuterated = False]
+# iterator = 7
+[ELB samples = 3 patterns = 3]
+NNC
+NCN
+CNN

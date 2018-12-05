@@ -5,14 +5,14 @@
 
 class BlockFinder {
 public:
-	BlockFinder(int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode, int bmin_t_free);
+	
 
 	vector<labeltype> types;
 	int samples;
 	NCS ncs;
 	int min_depth;
 	Scheme scheme;
-
+	int begin, end; 
 	//Scheme scheme("1", ncs, samples, {});
 
 	//vector <string> patterns; //temporary 
@@ -47,6 +47,7 @@ public:
 	void check_max_depth();
 	void find_schemes();
 	void blockfinder_finished();
+	BlockFinder(int bsamples, NCS bncs, int bmin_depth, bool bblock_finder_mode, int bmin_t_free, int begin = -1, int  end = -1);
 	//bfm? 
 };
 

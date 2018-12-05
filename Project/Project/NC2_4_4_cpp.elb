@@ -1,0 +1,14 @@
+[NCS = NC2]
+[Deuterated = False]
+# iterator = 120
+[ELB samples = 4 patterns = 4]
+NNNC
+NNCN
+NCNN
+CNNN
+# iterator = 206
+[ELB samples = 4 patterns = 4]
+NNCC
+NCNC
+CNCN
+CCNN

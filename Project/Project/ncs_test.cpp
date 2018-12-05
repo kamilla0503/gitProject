@@ -8,7 +8,7 @@
 #include"blockfinder.h"
 //
 using namespace std; 
-
+/**
 int main(int argc, char **argv)
 {
 	vector<spectrum> nc2_spectra;
@@ -25,14 +25,16 @@ int main(int argc, char **argv)
 	//nc2_spectra.push_back(spectrum("HNCAfCO"));
 
 
-
+	cout << "START " << endl; 
+	NCS test_nc2;
+	test_nc2 = get_NCS("NC2");
 
 
 	nc2_labeltype.push_back(labeltype('X', 0, 0, 0));
 	nc2_labeltype.push_back(labeltype('N', 1,0,0));
 	nc2_labeltype.push_back(labeltype('C',0, 0, 1));
 
-	NCS test_nc2(nc2_name, nc2_spectra, nc2_labeltype);
+	//NCS test_nc2(nc2_name, nc2_spectra, nc2_labeltype);
 	NCS newtest = test_nc2;
 	cout << " Size of label_types: " << newtest.label_types.size() << endl;
 	cout << " Size of spec_list: " << newtest.spec_list.size() << endl;
@@ -110,8 +112,8 @@ int main(int argc, char **argv)
 
 
 	getchar();
-	int samp = 5; 
-	int minp = 5;
+	int samp =4; 
+	int minp =4;
 	BlockFinder b(samp, test_nc2, minp, true, -1);
 	cout << " test creating bf and s " << b.scheme.samples << endl;
 	cout << "!!!" << endl; 
@@ -150,3 +152,4 @@ int main(int argc, char **argv)
 	return 0;
 }
 
+**/

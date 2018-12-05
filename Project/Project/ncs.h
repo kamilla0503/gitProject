@@ -76,34 +76,10 @@ public:
 	NCS(string name_ncs = "", vector<spectrum>spectra_list_ncs = {}, vector<labeltype> label_types_ncs = {}, bool deuterated_ncs = 0);
 	void make_coding_table(void); 
 	NCS& operator=(NCS& other);
-	//NCS& operator=(const NCS& other);
 	string calc_code(string pattern_1, string pattern_2);
 	bool check_power(string new_pattern,int min_depth);
 };
-
-
-
-//bool operator==(const  Scheme& t1, const  Scheme& t2); 
-
-
-
-
-
-
-/**
-class Product {
-public:
-	all_blocks;
-	product_list;
-
-	Product(all_blocks, product_list);
-
-
-
-};**/
-
-
-//for scheme (patterns) 
+NCS get_NCS(string name);
 bool pattern_bigger(string pattern1, string  pattern2);
 string simplify_pattern(string pattern);
 map <string, int>  simplify_list_of_patterns(vector<string> list_of_patterns); 
@@ -111,8 +87,5 @@ tuple<int, int > count_type_in_list_of_simplified(map <string, int> simplified, 
 int index_of_type(labeltype label_type);
 tuple<int, int > count_type_in_list_of_patterns(vector<string>  patterns,labeltype label_type);
 
-
 #endif  // NCS_H_INCLUDED
 
-//def read_blocks(block_file, logger = None);
-//void read_blocks(string block_file,  logger, string *result,map<  , > blocks, string *ncs_name ,bool *deuterated);
