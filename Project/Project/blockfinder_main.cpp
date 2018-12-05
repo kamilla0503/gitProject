@@ -26,6 +26,21 @@ int main(int argc, char *argv[]) {
 		convertdepth >> min_depth;
 		cout << "readed" << endl;
 	}
+	else {
+		name_ncs = argv[1];
+		stringstream convert(argv[2]);
+		convert >> samples;
+		stringstream convertdepth(argv[3]);
+		convertdepth >> min_depth;
+		
+		stringstream convertbegin(argv[4]);
+		convertbegin >> begin;
+
+		stringstream convertend(argv[5]);
+		convertend >> end; 
+
+		cout << "readed" << endl;
+	}
 
 	getchar();
 
