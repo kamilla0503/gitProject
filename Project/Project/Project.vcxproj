@@ -31,7 +31,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="blockfinder.h" />
-    <ClInclude Include="Constants.h" />
     <ClInclude Include="ncs.h" />
     <ClInclude Include="scheme.h" />
   </ItemGroup>

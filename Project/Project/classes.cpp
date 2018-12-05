@@ -15,7 +15,12 @@ NCS get_NCS(string name) {
 		NCS ncs(name, nc2_spectra, nc2_labeltype);
 		return ncs;
 	}
+	else if (name == "NCD2") {
 
+
+
+
+	}
 
 
 	
