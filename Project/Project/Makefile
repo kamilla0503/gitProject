@@ -6,16 +6,16 @@ CPPFLAGS=-g -std=c++11
 LDFLAGS=-g -std=c++11
 LDLIBS=
 
-SRCS=ncs.cpp ncs_test.cpp ELBcpp.cpp
+SRCS=ncs.cpp blockfinder.cpp scheme.cpp blockfinder_main.cpp
 OBJS=$(subst .cpp,.o,$(SRCS))
 
 all: test_ncs
 
-ncs.o: ncs.cpp ncs.h
+ncs.o: ncs.cpp classes.cpp ncs.h
 
-ncs_test.o: ncs_test.cpp ncs.h
+blockfinder.o: classes.cpp blockfinder_main.cpp blockfinder.cpp blockfinder.h ncs.h
 
-ELBcp.o: ELBcpp.cpp ncs.h
+scheme.o: scheme.cpp scheme.h
 
 test_ncs: $(OBJS)
 	$(CXX) $(LDFLAGS) -o test_ncs $(OBJS) $(LDLIBS)
