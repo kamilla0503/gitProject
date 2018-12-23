@@ -1,4 +1,0 @@
-﻿  blockfinder_main.cpp
-c:\users\kamilla\desktop\gitproject\project\project\blockfinder_main.cpp(11): warning C4101: begin: неиспользованная локальная переменная
-c:\users\kamilla\desktop\gitproject\project\project\blockfinder_main.cpp(11): warning C4101: end: неиспользованная локальная переменная
-  Project.vcxproj -> C:\Users\Kamilla\Desktop\gitProject\Project\Debug\Project.exe
