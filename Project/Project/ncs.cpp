@@ -2,6 +2,10 @@
 
 using namespace std; 
  
+spectrum::spectrum(const char & sname) { 
+	name = sname; 
+}
+
 spectrum::spectrum(string sname) { 
 	name = sname; 
 }

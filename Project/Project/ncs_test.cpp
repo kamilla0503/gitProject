@@ -11,7 +11,8 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-	vector<spectrum> nc2_spectra;
+        vector<string> nc2_names { "HSQC", "HNCO" };
+	vector<spectrum> nc2_spectra(nc2_names.begin(), nc2_names.end());
 	vector<labeltype> nc2_labeltype;
 	string nc2_name("NC2");
 

@@ -50,6 +50,7 @@ class spectrum {
 public:
 	string name;
 	spectrum(string sname);
+	spectrum(const char & sname);
 	int has_signal(labeltype label_type_1, labeltype label_type_2);
 };
 
