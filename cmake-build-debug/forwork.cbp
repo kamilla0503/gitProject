@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="forwork"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/kamilla/forwork/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/kamilla/forwork/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="forwork">
+				<Option output="/home/kamilla/forwork/cmake-build-debug/forwork" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kamilla/forwork/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 forwork"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="forwork/fast">
+				<Option output="/home/kamilla/forwork/cmake-build-debug/forwork" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kamilla/forwork/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 forwork/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/kamilla/forwork/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kamilla/forwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/kamilla/forwork/PatternCodes.h">
+			<Option target="forwork"/>
+		</Unit>
+		<Unit filename="/home/kamilla/forwork/PatternsCodes.cpp">
+			<Option target="forwork"/>
+		</Unit>
+		<Unit filename="/home/kamilla/forwork/blockfinder.cpp">
+			<Option target="forwork"/>
+		</Unit>
+		<Unit filename="/home/kamilla/forwork/blockfinder.h">
+			<Option target="forwork"/>
+		</Unit>
+		<Unit filename="/home/kamilla/forwork/blockfinder_main.cpp">
+			<Option target="forwork"/>
+		</Unit>
+		<Unit filename="/home/kamilla/forwork/classes.cpp">
+			<Option target="forwork"/>
+		</Unit>
+		<Unit filename="/home/kamilla/forwork/ncs.cpp">
+			<Option target="forwork"/>
+		</Unit>
+		<Unit filename="/home/kamilla/forwork/ncs.h">
+			<Option target="forwork"/>
+		</Unit>
+		<Unit filename="/home/kamilla/forwork/scheme.cpp">
+			<Option target="forwork"/>
+		</Unit>
+		<Unit filename="/home/kamilla/forwork/scheme.h">
+			<Option target="forwork"/>
+		</Unit>
+		<Unit filename="/home/kamilla/forwork/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

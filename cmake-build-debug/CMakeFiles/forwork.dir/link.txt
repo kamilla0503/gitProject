@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/forwork.dir/blockfinder.cpp.o CMakeFiles/forwork.dir/blockfinder_main.cpp.o CMakeFiles/forwork.dir/classes.cpp.o CMakeFiles/forwork.dir/ncs.cpp.o CMakeFiles/forwork.dir/scheme.cpp.o CMakeFiles/forwork.dir/PatternsCodes.cpp.o  -o forwork 
