@@ -1,0 +1,1157 @@
+[NCS = NCD2]
+[Deuterated = False]
+# iterator = 131
+[ELB samples = 4 patterns = 5]
+XNNN
+NXDD
+NDXD
+NDDX
+DNND
+# iterator = 134
+[ELB samples = 4 patterns = 5]
+XNNN
+NXDD
+NDXD
+NDDX
+DDDD
+# iterator = 136
+[ELB samples = 4 patterns = 5]
+XNNN
+NXDD
+NDXD
+NDDN
+DNNC
+# iterator = 139
+[ELB samples = 4 patterns = 5]
+XNNN
+NXDD
+NDXD
+NDDN
+DDDC
+# iterator = 143
+[ELB samples = 4 patterns = 5]
+XNNN
+NXDD
+NDXD
+DNNC
+DDDN
+# iterator = 144
+[ELB samples = 4 patterns = 5]
+XNNN
+NXDD
+NDXD
+DNNC
+DDDD
+# iterator = 148
+[ELB samples = 4 patterns = 5]
+XNNN
+NXDD
+NDXD
+DNND
+DDDX
+# iterator = 166
+[ELB samples = 4 patterns = 5]
+XNNN
+NXDD
+NDNC
+NDCN
+DNND
+# iterator = 169
+[ELB samples = 4 patterns = 5]
+XNNN
+NXDD
+NDNC
+NDCN
+DDDD
+# iterator = 174
+[ELB samples = 4 patterns = 5]
+XNNN
+NXDD
+NDNC
+NDDN
+DDCD
+# iterator = 183
+[ELB samples = 4 patterns = 5]
+XNNN
+NXDD
+NDNC
+DNND
+DDCN
+# iterator = 544
+[ELB samples = 4 patterns = 5]
+XNNN
+NNCD
+NCND
+NDDN
+DNNC
+# iterator = 547
+[ELB samples = 4 patterns = 5]
+XNNN
+NNCD
+NCND
+NDDN
+DDDC
+# iterator = 551
+[ELB samples = 4 patterns = 5]
+XNNN
+NNCD
+NCND
+DNNC
+DDDN
+# iterator = 552
+[ELB samples = 4 patterns = 5]
+XNNN
+NNCD
+NCND
+DNNC
+DDDD
+# iterator = 556
+[ELB samples = 4 patterns = 5]
+XNNN
+NNCD
+NCND
+DNND
+DDDX
+# iterator = 593
+[ELB samples = 4 patterns = 5]
+XNNN
+NNCD
+NCDN
+DNDX
+DDND
+# iterator = 597
+[ELB samples = 4 patterns = 5]
+XNNN
+NNCD
+NCDN
+DNDN
+DDNC
+# iterator = 660
+[ELB samples = 4 patterns = 5]
+XNNN
+NNCD
+NDND
+DXND
+DDDX
+# iterator = 2003
+[ELB samples = 4 patterns = 5]
+XNNN
+NCDD
+DNXD
+DNDX
+DDNN
+# iterator = 2041
+[ELB samples = 4 patterns = 5]
+XNNN
+NCDD
+DNCD
+DDNC
+DDDN
+# iterator = 2043
+[ELB samples = 4 patterns = 5]
+XNNN
+NCDD
+DNCD
+DDND
+DDDX
+# iterator = 2068
+[ELB samples = 4 patterns = 5]
+XNNN
+NCDD
+DNDD
+DDXD
+DDDX
+# iterator = 3229
+[ELB samples = 4 patterns = 5]
+XNNN
+NDDD
+DXND
+DNDX
+DDXN
+# iterator = 3250
+[ELB samples = 4 patterns = 5]
+XNNN
+NDDD
+DXDD
+DDXD
+DDDX
+# iterator = 3824
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDXN
+NDDC
+DNNN
+# iterator = 3825
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDXN
+NDDC
+DNDD
+# iterator = 3829
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDXN
+NDDD
+DNNX
+# iterator = 3832
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDXN
+NDDD
+DDDX
+# iterator = 3837
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDXN
+DNNX
+DDDD
+# iterator = 3841
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDXN
+DNNN
+DDDX
+# iterator = 3842
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDXN
+DNNN
+DDDC
+# iterator = 3895
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDNN
+NDCD
+DNDC
+# iterator = 3897
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDNN
+NDCD
+DDDX
+# iterator = 3920
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDNN
+DDXD
+DDDX
+# iterator = 3937
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDCD
+DNDC
+DDNN
+# iterator = 3938
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDCD
+DNDC
+DDND
+# iterator = 3941
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDCD
+DNDD
+DDNX
+# iterator = 3943
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDCD
+DNDD
+DDDX
+# iterator = 3996
+[ELB samples = 4 patterns = 5]
+XNND
+NXDN
+NDDD
+DDXD
+DDDX
+# iterator = 4294
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCNN
+NDDC
+DNNN
+# iterator = 4295
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCNN
+NDDC
+DNDD
+# iterator = 4299
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCNN
+NDDD
+DNNX
+# iterator = 4302
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCNN
+NDDD
+DDDX
+# iterator = 4307
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCNN
+DNNX
+DDDD
+# iterator = 4311
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCNN
+DNNN
+DDDX
+# iterator = 4312
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCNN
+DNNN
+DDDC
+# iterator = 4329
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCDD
+NDNX
+DNNN
+# iterator = 4330
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCDD
+NDNX
+DNDD
+# iterator = 4335
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCDD
+NDNN
+DNDC
+# iterator = 4337
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCDD
+NDNN
+DDDX
+# iterator = 4347
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCDD
+DNDC
+DDNN
+# iterator = 4348
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCDD
+DNDC
+DDND
+# iterator = 4351
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCDD
+DNDD
+DDNX
+# iterator = 4353
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NCDD
+DNDD
+DDDX
+# iterator = 4364
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NDNX
+NDDD
+DXNN
+# iterator = 4365
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NDNX
+NDDD
+DXDD
+# iterator = 4372
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NDNX
+DXNN
+DDDD
+# iterator = 4374
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NDNX
+DXDD
+DNNN
+# iterator = 4380
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NDNX
+DNNN
+DCDD
+# iterator = 4406
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NDNN
+DXDD
+DDDX
+# iterator = 4455
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NDDC
+DXDD
+DDNN
+# iterator = 4462
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NDDC
+DNDD
+DCNN
+# iterator = 4480
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NDDD
+DXDD
+DDNX
+# iterator = 4482
+[ELB samples = 4 patterns = 5]
+XNND
+NNCN
+NDDD
+DXDD
+DDDX
+# iterator = 4759
+[ELB samples = 4 patterns = 5]
+XNND
+NNDX
+NDCD
+DXDD
+DDNN
+# iterator = 4766
+[ELB samples = 4 patterns = 5]
+XNND
+NNDX
+NDCD
+DNDD
+DCNN
+# iterator = 4790
+[ELB samples = 4 patterns = 5]
+XNND
+NNDX
+NDDD
+DXDD
+DDXN
+# iterator = 4967
+[ELB samples = 4 patterns = 5]
+XNND
+NNDN
+NCDD
+DNCD
+DDNX
+# iterator = 4968
+[ELB samples = 4 patterns = 5]
+XNND
+NNDN
+NCDD
+DNCD
+DDNC
+# iterator = 4969
+[ELB samples = 4 patterns = 5]
+XNND
+NNDN
+NCDD
+DNCD
+DDDX
+# iterator = 4976
+[ELB samples = 4 patterns = 5]
+XNND
+NNDN
+NCDD
+DDXD
+DDDX
+# iterator = 5069
+[ELB samples = 4 patterns = 5]
+XNND
+NNDN
+NDCD
+DXDD
+DDNX
+# iterator = 5076
+[ELB samples = 4 patterns = 5]
+XNND
+NNDN
+NDCD
+DNDC
+DCNN
+# iterator = 5142
+[ELB samples = 4 patterns = 5]
+XNND
+NNDN
+DXDD
+DDXD
+DDDX
+# iterator = 5579
+[ELB samples = 4 patterns = 5]
+XNND
+NCDN
+DNNX
+DNDD
+DDXD
+# iterator = 5589
+[ELB samples = 4 patterns = 5]
+XNND
+NCDN
+DNNN
+DNDC
+DDXD
+# iterator = 5597
+[ELB samples = 4 patterns = 5]
+XNND
+NCDN
+DNCN
+DDNX
+DDDD
+# iterator = 5599
+[ELB samples = 4 patterns = 5]
+XNND
+NCDN
+DNCN
+DDNN
+DDDC
+# iterator = 5612
+[ELB samples = 4 patterns = 5]
+XNND
+NCDN
+DNDX
+DDXN
+DDDD
+# iterator = 5615
+[ELB samples = 4 patterns = 5]
+XNND
+NCDN
+DNDX
+DDNN
+DDCD
+# iterator = 5796
+[ELB samples = 4 patterns = 5]
+XNND
+NCDD
+DNCD
+DDNC
+DDDN
+# iterator = 5798
+[ELB samples = 4 patterns = 5]
+XNND
+NCDD
+DNCD
+DDND
+DDDX
+# iterator = 5823
+[ELB samples = 4 patterns = 5]
+XNND
+NCDD
+DNDD
+DDXD
+DDDX
+# iterator = 6689
+[ELB samples = 4 patterns = 5]
+XNND
+NDDX
+DXDN
+DDXN
+DDDD
+# iterator = 6692
+[ELB samples = 4 patterns = 5]
+XNND
+NDDX
+DXDN
+DDNN
+DDCD
+# iterator = 6700
+[ELB samples = 4 patterns = 5]
+XNND
+NDDX
+DXDD
+DNNN
+DDXD
+# iterator = 6793
+[ELB samples = 4 patterns = 5]
+XNND
+NDDN
+DXDD
+DNNX
+DDXD
+# iterator = 6999
+[ELB samples = 4 patterns = 5]
+XNND
+NDDD
+DXDD
+DDXD
+DDDX
+# iterator = 12300
+[ELB samples = 4 patterns = 5]
+XNDD
+NNNN
+NCND
+NDCN
+DNNC
+# iterator = 12301
+[ELB samples = 4 patterns = 5]
+XNDD
+NNNN
+NCND
+NDCN
+DNDX
+# iterator = 12303
+[ELB samples = 4 patterns = 5]
+XNDD
+NNNN
+NCND
+NDCN
+DDDC
+# iterator = 12305
+[ELB samples = 4 patterns = 5]
+XNDD
+NNNN
+NCND
+NDDX
+DNXD
+# iterator = 12308
+[ELB samples = 4 patterns = 5]
+XNDD
+NNNN
+NCND
+NDDX
+DDCD
+# iterator = 12312
+[ELB samples = 4 patterns = 5]
+XNDD
+NNNN
+NCND
+DNXD
+DDDX
+# iterator = 12317
+[ELB samples = 4 patterns = 5]
+XNDD
+NNNN
+NCND
+DNNC
+DDCN
+# iterator = 12377
+[ELB samples = 4 patterns = 5]
+XNDD
+NNNN
+NDXD
+NDDX
+DXND
+# iterator = 12380
+[ELB samples = 4 patterns = 5]
+XNDD
+NNNN
+NDXD
+NDDX
+DCDD
+# iterator = 12384
+[ELB samples = 4 patterns = 5]
+XNDD
+NNNN
+NDXD
+DXND
+DDDX
+# iterator = 12392
+[ELB samples = 4 patterns = 5]
+XNDD
+NNNN
+NDXD
+DNNC
+DCDN
+# iterator = 12897
+[ELB samples = 4 patterns = 5]
+XNDD
+NCNN
+DNXD
+DNDX
+DDDD
+# iterator = 12899
+[ELB samples = 4 patterns = 5]
+XNDD
+NCNN
+DNXD
+DNDN
+DDDC
+# iterator = 12917
+[ELB samples = 4 patterns = 5]
+XNDD
+NCNN
+DNNN
+DDXD
+DDDX
+# iterator = 12919
+[ELB samples = 4 patterns = 5]
+XNDD
+NCNN
+DNNN
+DDNC
+DDCN
+# iterator = 12926
+[ELB samples = 4 patterns = 5]
+XNDD
+NCNN
+DNNC
+DNCN
+DDDD
+# iterator = 12928
+[ELB samples = 4 patterns = 5]
+XNDD
+NCNN
+DNNC
+DNDN
+DDCD
+# iterator = 12992
+[ELB samples = 4 patterns = 5]
+XNDD
+NCND
+NDCN
+DNNN
+DDDC
+# iterator = 12994
+[ELB samples = 4 patterns = 5]
+XNDD
+NCND
+NDCN
+DNNC
+DNDN
+# iterator = 12996
+[ELB samples = 4 patterns = 5]
+XNDD
+NCND
+NDCN
+DNNC
+DDDD
+# iterator = 12998
+[ELB samples = 4 patterns = 5]
+XNDD
+NCND
+NDCN
+DNND
+DNDX
+# iterator = 13000
+[ELB samples = 4 patterns = 5]
+XNDD
+NCND
+NDCN
+DNND
+DDDC
+# iterator = 13003
+[ELB samples = 4 patterns = 5]
+XNDD
+NCND
+NDCN
+DNDX
+DDDD
+# iterator = 13017
+[ELB samples = 4 patterns = 5]
+XNDD
+NCND
+NDDX
+DNXD
+DNDN
+# iterator = 13019
+[ELB samples = 4 patterns = 5]
+XNDD
+NCND
+NDDX
+DNXD
+DDDD
+# iterator = 13021
+[ELB samples = 4 patterns = 5]
+XNDD
+NCND
+NDDX
+DNNN
+DDCD
+# iterator = 13025
+[ELB samples = 4 patterns = 5]
+XNDD
+NCND
+NDDX
+DNND
+DDCD
+# iterator = 13478
+[ELB samples = 4 patterns = 5]
+XNDD
+NDXD
+NDDX
+DXND
+DNDN
+# iterator = 13480
+[ELB samples = 4 patterns = 5]
+XNDD
+NDXD
+NDDX
+DXND
+DDDD
+# iterator = 13486
+[ELB samples = 4 patterns = 5]
+XNDD
+NDXD
+NDDX
+DNNN
+DCDD
+# iterator = 13489
+[ELB samples = 4 patterns = 5]
+XNDD
+NDXD
+NDDX
+DNND
+DCDD
+# iterator = 27676
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNN
+DXDD
+DDXD
+DDDX
+# iterator = 27679
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNN
+DXDD
+DDNC
+DDCN
+# iterator = 27692
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNN
+DNNC
+DNCN
+DCNN
+# iterator = 27709
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNN
+DNCD
+DCDN
+DDNC
+# iterator = 27749
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+NNCN
+NCNN
+DNNN
+# iterator = 27750
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+NNCN
+NCNN
+DNDD
+# iterator = 27755
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+NNCN
+NDNN
+DXDD
+# iterator = 27756
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+NNCN
+NDNN
+DCND
+# iterator = 27764
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+NNCN
+DXDD
+DDNN
+# iterator = 27765
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+NNCN
+DXDD
+DDND
+# iterator = 27771
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+NNCN
+DNDD
+DCNN
+# iterator = 27772
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+NNCN
+DNDD
+DCND
+# iterator = 27800
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+NNDN
+DXDD
+DDXD
+# iterator = 27801
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+NNDN
+DXDD
+DDCN
+# iterator = 27806
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+NNDN
+DNCD
+DCNN
+# iterator = 27807
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+NNDN
+DNCD
+DCND
+# iterator = 27923
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+DXDD
+DDXD
+DDDN
+# iterator = 27926
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+DXDD
+DDND
+DDCN
+# iterator = 27960
+[ELB samples = 4 patterns = 5]
+XDDD
+NNNC
+DNCD
+DCND
+DDDN
+# iterator = 28188
+[ELB samples = 4 patterns = 5]
+XDDD
+NNND
+DXDD
+DDXD
+DDDX
+# iterator = 28191
+[ELB samples = 4 patterns = 5]
+XDDD
+NNND
+DXDD
+DDNC
+DDCN
+# iterator = 28227
+[ELB samples = 4 patterns = 5]
+XDDD
+NNND
+DNCD
+DCDN
+DDNC
+# iterator = 47262
+[ELB samples = 4 patterns = 5]
+NNNN
+NNCD
+NCND
+CNND
+DDDC
+# iterator = 47264
+[ELB samples = 4 patterns = 5]
+NNNN
+NNCD
+NCND
+CNDN
+DNNC
+# iterator = 47272
+[ELB samples = 4 patterns = 5]
+NNNN
+NNCD
+NCND
+CDDN
+DNNC
+# iterator = 48220
+[ELB samples = 4 patterns = 5]
+NNNN
+NCDD
+CNDD
+DDNC
+DDCN
+# iterator = 49639
+[ELB samples = 4 patterns = 5]
+NNNC
+NNCN
+NCNN
+NDDD
+CNNN
+# iterator = 49640
+[ELB samples = 4 patterns = 5]
+NNNC
+NNCN
+NCNN
+NDDD
+CNDD
+# iterator = 49647
+[ELB samples = 4 patterns = 5]
+NNNC
+NNCN
+NCNN
+CNNN
+DDDD
+# iterator = 49649
+[ELB samples = 4 patterns = 5]
+NNNC
+NNCN
+NCNN
+CNDD
+DNNN
+# iterator = 49661
+[ELB samples = 4 patterns = 5]
+NNNC
+NNCN
+NCNN
+CDDD
+DNNN
+# iterator = 49673
+[ELB samples = 4 patterns = 5]
+NNNC
+NNCN
+NCDD
+NDNN
+CNDD
+# iterator = 49682
+[ELB samples = 4 patterns = 5]
+NNNC
+NNCN
+NCDD
+CNDD
+DDNN
+# iterator = 49683
+[ELB samples = 4 patterns = 5]
+NNNC
+NNCN
+NCDD
+CNDD
+DDND
+# iterator = 49686
+[ELB samples = 4 patterns = 5]
+NNNC
+NNCN
+NCDD
+CDNN
+DNDD
+# iterator = 49936
+[ELB samples = 4 patterns = 5]
+NNNC
+NNDN
+NCDD
+CNDD
+DDCN
+# iterator = 49938
+[ELB samples = 4 patterns = 5]
+NNNC
+NNDN
+NCDD
+CDNN
+DNCD
+# iterator = 50395
+[ELB samples = 4 patterns = 5]
+NNNC
+NCDN
+CNDN
+DDNN
+DDCD
+# iterator = 50410
+[ELB samples = 4 patterns = 5]
+NNNC
+NCDN
+CDNN
+DNCN
+DDDD
+# iterator = 50573
+[ELB samples = 4 patterns = 5]
+NNNC
+NCDD
+CNDD
+DDND
+DDCN
+# iterator = 52721
+[ELB samples = 4 patterns = 5]
+NNND
+NCDN
+CDNN
+DNCN
+DDDC
+# iterator = 52894
+[ELB samples = 4 patterns = 5]
+NNND
+NCDD
+CNDD
+DDNC
+DDCN
+# iterator = 56304
+[ELB samples = 4 patterns = 5]
+NNCD
+NCND
+NDDN
+CNND
+DDDC
+# iterator = 56306
+[ELB samples = 4 patterns = 5]
+NNCD
+NCND
+NDDN
+CNDN
+DNNC
+# iterator = 56351
+[ELB samples = 4 patterns = 5]
+NNCD
+NCND
+CNDN
+DNNC
+DDDD
