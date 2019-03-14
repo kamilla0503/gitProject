@@ -26,15 +26,15 @@ int main(int argc, char *argv[]) {
 		convertdepth >> min_depth;
 		cout << "readed" << endl;
 
-		NCS test_nc2 = get_NCS(name_ncs);
+		NCS ncs = get_NCS(name_ncs);
 		cout << "////" << endl;
 
-		cout << test_nc2.name << " ?" << endl;
+		cout << ncs.name << " ?" << endl;
 
 
-		BlockFinder b(samples, test_nc2, min_depth, true, -1);
+		BlockFinder b(samples, ncs, min_depth, true, -1);
 
-        BlockFinder b_c(samples, test_nc2, min_depth, true, -1);
+        BlockFinder b_c(samples, ncs, min_depth, true, -1);
 
         //b_c.counter= {17, 0, 0};
 
@@ -58,11 +58,11 @@ int main(int argc, char *argv[]) {
         }**/
 
 
-		ofstream blocks_file;
-		string block_filename = "NCD2" + to_string(samples) + "_" + to_string(min_depth) + "_cpp.txt";
+		//ofstream blocks_file;
+		//string block_filename = ncs.name + "_" + to_string(samples) + "_" + to_string(min_depth) + "_cpp.txt";
 		//blocks_file.open(block_filename, fstream::out);
 
-		blocks_file.open(block_filename);
+		//blocks_file.open(block_filename);
 		clock_t start = clock();
 
 		b.find_schemes();
@@ -86,11 +86,13 @@ int main(int argc, char *argv[]) {
 		//cout << b.results_found << " found " << endl;
 		//cout << b.result.size() << " size of results" << endl;
 		//cout << b.out1 << endl;
-		blocks_file << b.result_string;
+		//blocks_file << b.result_string;
 
-		blocks_file.close();
+		//blocks_file.close();
+		printf("Solutions found: %d\n", b.results_found);
 		//cout << "Blocks found (" << b.results_found << ") are written to file " << block_filename << endl;
 		printf("The time: %f seconds\n", seconds);
+		printf("Average rate: %6.2f iter/sec\n", b.iterator/seconds);
 
 
 
@@ -115,18 +117,18 @@ int main(int argc, char *argv[]) {
 
 		cout << "readed" << endl;
 
-		//NCS test_nc2 = get_NCS(name_ncs);
+		NCS ncs = get_NCS(name_ncs);
 		cout << "////" << endl;
 
-		//cout << test_nc2.name << " ?" << endl;
+		cout << ncs.name << " ?" << endl;
 
 
-		//BlockFinder b(samples, test_nc2, min_depth, true, -1);
+		//BlockFinder b(samples, ncs, min_depth, true, -1);
 
 
 		cout << " Q" << endl;
 		fstream blocks_file;
-		string block_filename = "NC2_" + to_string(samples) + "_" + to_string(min_depth) + "_cpp.elb";
+		string block_filename = ncs.name + to_string(samples) + "_" + to_string(min_depth) + "_cpp.elb";
 		//blocks_file.open(block_filename, fstream::out);
 		clock_t start = clock();
 

@@ -7,6 +7,8 @@ BlockFinder::BlockFinder( int bsamples, NCS bncs, int bmin_depth, bool bblock_fi
 	check_t_free = false; 
 	block_finder_mode = bblock_finder_mode;
 	depth = 0;  
+	string results_filename = ncs.name + "_" + to_string(samples) + "_" + to_string(min_depth) + "_cpp.txt";
+	result_ofstream.open(results_filename);
 	min_t_free = bmin_t_free;
 	index_of_type_T = index_of_type(labeltype('T', 1, 1, 0));
 	if (min_t_free >= 0) {
@@ -37,8 +39,8 @@ BlockFinder::BlockFinder( int bsamples, NCS bncs, int bmin_depth, bool bblock_fi
 
 	begin = bbegin;
 	end = bend; 
-	result_string = "[NCS = " + ncs.name + "]\n"+
-	                "[Deuterated = " + (ncs.deuterated?"True":"False") + "]\n";
+	result_ofstream << "[NCS = " << ncs.name << "]"<<endl<<
+	                "[Deuterated = " << (ncs.deuterated?"True":"False")<< "]"<<endl<<fflush;
 	
 	out1 = "";
 	start_time = clock();
@@ -52,7 +54,7 @@ vector<string> BlockFinder::generate_patterns(int  bsamples, bool top ) {
 	if (bsamples == 0) {
 		new_set = {"" }; //previously "0"
 		return new_set;
-	}
+}
 	
 	current_set = generate_patterns(bsamples - 1, false);
 	//new_set = { };
@@ -242,12 +244,13 @@ void BlockFinder::maincycle() {
 		check_max_depth();
 	}
 	cout<< "BlockFinder finished after "<<iterator<< " iterations"<<endl;
+	result_ofstream.close();
 }
 
-void BlockFinder::next_iteration_output()
+inline void BlockFinder::next_iteration_output()
 {
     iterator++;
-    if (iterator % 10000 == 0) {
+    if (iterator % 100000 == 0) {
       ostringstream log;
       log<< "[BlockFinder" << to_string(samples) << "]";
       log<< setw(9) << iterator;
@@ -264,13 +267,13 @@ void BlockFinder::next_iteration_output()
     }
 }
 
-void BlockFinder::go_parallel() {
+inline void BlockFinder::go_parallel() {
 	scheme =back_up_schemes[depth];
 	back_up_schemes.pop_back();
 	counter[depth] = counter[depth] + 1;
 }
 
-void BlockFinder::check_max_depth() {
+inline void BlockFinder::check_max_depth() {
 	if (depth > max_depth) {
 		max_depth = depth;
 		if (block_finder_mode) {
@@ -307,7 +310,7 @@ void BlockFinder:: blockfinder_finished() {
 	out1 = "[BlockFinder] finished search in" + to_string(samples) + "samples after " + to_string(iterator) + " iterations " + to_string(results_found) + " ELB schemes found";
 }
 
-void BlockFinder::go_back() {
+inline void BlockFinder::go_back() {
 	depth = depth -1;
 	patterns.pop_back();
 	counter.pop_back();
@@ -320,7 +323,7 @@ void BlockFinder::go_back() {
 
 }
 
-void BlockFinder::save_result() {
+inline void BlockFinder::save_result() {
 	if (check_t_free && !(check_have_enought_t_free(scheme, {}))) {
 		return; 
 	}
@@ -398,8 +401,8 @@ tuple<int, int > count_type_in_list_of_patterns(vector<int> patterns, labeltype 
 	return count_type_in_list_of_simplified(simplified, index_of_t);
 }
 
-void  BlockFinder::write_result(Scheme  new_scheme) {
+inline void  BlockFinder::write_result(Scheme  new_scheme) {
 	results_found = results_found + 1;
-        result_string += "# iterator = " + to_string(iterator) + "\n";
-	result_string += new_scheme.full_str(code_table);
+	result_ofstream << "# iterator = " + to_string(iterator) << endl;
+	result_ofstream << new_scheme.full_str(code_table)<<endl<<fflush;
 }

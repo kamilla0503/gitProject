@@ -20,7 +20,8 @@ public:
 	int depth;
 	int max_depth;
 	bool check_t_free;
-	string result_string;
+	ofstream result_ofstream;
+	string results_filename;
 	int  min_t_free = -1;
 	vector <int> counter = {}; //temporary
 	vector <Scheme> back_up_schemes = {};
